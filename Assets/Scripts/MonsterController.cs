@@ -51,7 +51,7 @@ public class MonsterController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                GetComponent<NavMeshAgent>().SetDestination(hit.point);
+                MoveTo(hit.point);
             }
         }*/
     }
