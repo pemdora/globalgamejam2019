@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class MonsterController : MonoBehaviour
 {
     public bool changedTarget;
-    public Vector3 target;
+    public GameObject target;
 
     private void Start()
     {
@@ -28,7 +28,7 @@ public class MonsterController : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Distance(this.transform.position, target) > 1.5f)
+        if (!changedTarget && Vector3.Distance(this.transform.position, target.transform.position) > 1.5f)
         {
             MoveTo(target);
         }
@@ -36,7 +36,6 @@ public class MonsterController : MonoBehaviour
         {
             if (!changedTarget)
             {
-                Debug.Log("changedTarget");
                 changedTarget = true;
                 MovementManager.instance.AssignPOI(this);
             }

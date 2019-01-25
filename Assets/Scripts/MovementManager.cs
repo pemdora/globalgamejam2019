@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovementManager : MonoBehaviour {
 
     public List<GameObject> pointOfInterest;
+    [SerializeField]
     private List<GameObject> freePointOfInterest;
 
     public static MovementManager instance;
@@ -16,6 +17,7 @@ public class MovementManager : MonoBehaviour {
         {
             //if not, set instance to this
             instance = this;
+            freePointOfInterest = new List<GameObject>(pointOfInterest);
         }
         //If instance already exists and it's not this:
         else if (instance != this)
@@ -29,15 +31,23 @@ public class MovementManager : MonoBehaviour {
 
     public void AssignPOI(MonsterController monsterC)
     {
-        int index = Random.Range(0, pointOfInterest.Count-1);
+        int index = Random.Range(0, freePointOfInterest.Count-1);
+        GameObject newPOI = freePointOfInterest[index];
         Debug.Log("index " + index);
 
-        monsterC.target =  pointOfInterest[index].transform.position;
+        
+        // while random target is equal to current target
+        while (freePointOfInterest[index]==null||freePointOfInterest[index]==monsterC.target)
+        {
+            index = Random.Range(0, freePointOfInterest.Count - 1);
+            newPOI = freePointOfInterest[index];
+        }
+
+        freePointOfInterest.Remove(newPOI); // remove new POI
+        freePointOfInterest.Add(monsterC.target); // Add former monster PO
+        monsterC.target = newPOI;
+
         monsterC.changedTarget = false;
     }
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
+    
 }
