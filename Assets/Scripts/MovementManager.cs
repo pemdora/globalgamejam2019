@@ -46,8 +46,9 @@ public class MovementManager : MonoBehaviour {
         freePointOfInterest.Remove(newPOI); // remove new POI
         freePointOfInterest.Add(monsterC.target); // Add former monster PO
         monsterC.target = newPOI;
+        monsterC.timeLeft = newPOI.GetComponent<RoomObject>().time;
 
-        monsterC.changedTarget = false;
+        monsterC.doingAction = true;
     }
     
 }

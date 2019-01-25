@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33443547734980352}
   - component: {fileID: 23528749319367382}
   - component: {fileID: 65560214734917640}
+  - component: {fileID: 114745076427635396}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Room
@@ -40,6 +41,7 @@ GameObject:
   - component: {fileID: 33517573641509036}
   - component: {fileID: 23280554026958212}
   - component: {fileID: 65431185575977968}
+  - component: {fileID: 114675870749601754}
   m_Layer: 0
   m_Name: WC
   m_TagString: Room
@@ -73,6 +75,7 @@ GameObject:
   - component: {fileID: 33349032012956788}
   - component: {fileID: 23486092827192768}
   - component: {fileID: 65722559741937156}
+  - component: {fileID: 114653567364216026}
   m_Layer: 0
   m_Name: Couch
   m_TagString: Room
@@ -91,6 +94,7 @@ GameObject:
   - component: {fileID: 33745176604162826}
   - component: {fileID: 23926759672709732}
   - component: {fileID: 65316054799339154}
+  - component: {fileID: 114180870780741802}
   m_Layer: 0
   m_Name: Kitchen
   m_TagString: Room
@@ -383,3 +387,51 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114180870780741802
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1605896554408114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d80bcc9f445bf33409efee838960a43b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0
+--- !u!114 &114653567364216026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1479216555232658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d80bcc9f445bf33409efee838960a43b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0
+--- !u!114 &114675870749601754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1078847494515640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d80bcc9f445bf33409efee838960a43b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0
+--- !u!114 &114745076427635396
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1059152063797706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d80bcc9f445bf33409efee838960a43b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0

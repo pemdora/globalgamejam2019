@@ -5,13 +5,17 @@ using UnityEngine.AI;
 
 public class MonsterController : MonoBehaviour
 {
-    public bool changedTarget;
+    [HideInInspector]
+    public bool doingAction;
+    [HideInInspector]
     public GameObject target;
+    [HideInInspector]
+    public float timeLeft;
 
     private void Start()
     {
         MovementManager.instance.AssignPOI(this);
-        changedTarget = false;
+        doingAction = true;
     }
 
     // Move to a position
@@ -28,17 +32,23 @@ public class MonsterController : MonoBehaviour
 
     void Update()
     {
-        if (!changedTarget && Vector3.Distance(this.transform.position, target.transform.position) > 1.5f)
+        // moving if target is not reached
+        if (Vector3.Distance(this.transform.position, target.transform.position) > 1.5f)
         {
             MoveTo(target);
         }
-        else
+        else if(doingAction)
         {
-            if (!changedTarget)
+            Debug.Log(timeLeft);
+            timeLeft -= Time.deltaTime;
+            if (timeLeft < 0)
             {
-                changedTarget = true;
                 MovementManager.instance.AssignPOI(this);
             }
+        }
+        else
+        {
+            Debug.Log("lolol");
         }
 
         /*
