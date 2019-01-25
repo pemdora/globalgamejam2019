@@ -4,11 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class MonsterController : MonoBehaviour {
-
-    void Start()
-    {
-        MoveTo(GameObject.Find("Kitchen"));
-    }
+    
 
     // Move to a position
     public void MoveTo(Vector3 target)
