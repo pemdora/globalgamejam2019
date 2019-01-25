@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Monster
   - Room
+  - Movable
   layers:
   - Default
   - TransparentFX
