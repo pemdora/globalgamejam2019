@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class MonsterController : MonoBehaviour {
     
-
     // Move to a position
     public void MoveTo(Vector3 target)
     {
@@ -28,7 +27,7 @@ public class MonsterController : MonoBehaviour {
 
             if (Physics.Raycast(ray, out hit))
             {
-                GetComponent<NavMeshAgent>().SetDestination(hit.point);
+                MoveTo(hit.point);
             }
         }
     }
