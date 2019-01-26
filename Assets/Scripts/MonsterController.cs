@@ -10,11 +10,13 @@ public class MonsterController : MonoBehaviour
     public bool occupyplace;
     [HideInInspector]
     public bool actionchosen;
+    [HideInInspector]
     public GameObject target;
     [HideInInspector]
     public float timeLeft;
     public float canReactDelay;
     private bool canReact;
+    private Transform vision;
 
     [SerializeField]
     private Image emoteImg;
@@ -40,6 +42,7 @@ public class MonsterController : MonoBehaviour
         playingImgAnimation = false;
         actionchosen = false;
         canReact = true;
+        vision = this.transform.Find("Vision");
     }
 
     // Move to a position
@@ -73,18 +76,21 @@ public class MonsterController : MonoBehaviour
             Debug.Log("The active camera should be tagged with MainCamera ");
         }
         
-
+        
+        
         // moving if target is not reached => move
-        if (target != null && Vector3.Distance(this.transform.position, target.transform.position) > 3f)
+        if (target != null && Vector2.Distance(new Vector2(vision.position.x,vision.position.z), new Vector2(target.transform.position.x, target.transform.position.z)) > 2f)
         {
             if(!animator.GetBool("angry") && !animator.GetBool("happy"))
             {
+                Debug.Log("go");
                 GetComponent<NavMeshAgent>().isStopped = false;
                 animator.SetBool("walking", true);
                 MoveTo(target); // need to be called once to be cleaner
             }
             else
             {
+                Debug.Log("stop");
                 Stop();
             }
         }
@@ -101,7 +107,6 @@ public class MonsterController : MonoBehaviour
                     PlayerManager.instance.UpdateScore(-0.5f);
                     animator.SetBool("angry", true);
                     emoteImg.sprite = reactionObjects.Find(x => x.reaction == ObjectData.REACTION.Hate).emote;
-
                     StartEmoteAnim();
                     StartCoroutine(ChangeAnimationAndAssignTarget("angry", false, angryAnimationLenght));
                     // monster is angry 
@@ -144,7 +149,9 @@ public class MonsterController : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         animator.SetBool("walking", true);
+        GetComponent<NavMeshAgent>().isStopped = false;
         animator.SetBool(animationName, value);
+        LevelManager.instance.AssignPOI(this);
     }
 
     IEnumerator ChangeAnimation(string animationName, bool value, float time)
