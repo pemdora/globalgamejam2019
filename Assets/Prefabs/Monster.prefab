@@ -97,15 +97,14 @@ GameObject:
   - component: {fileID: 33774401121809536}
   - component: {fileID: 23006256622774792}
   - component: {fileID: 64910834641613526}
-  - component: {fileID: 114471638950851058}
-  - component: {fileID: 114570070071784538}
+  - component: {fileID: 114649178431199678}
   m_Layer: 9
   m_Name: Vision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1221692019739088
 GameObject:
   m_ObjectHideFlags: 1
@@ -582,7 +581,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1759149736749214}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.01, z: 0}
+  m_LocalPosition: {x: 0, y: 0.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4027809027301748}
@@ -1084,17 +1083,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114471638950851058
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1173546652217610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834474d4c5192dc459b6d327c142bf8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114521026546065696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1110,11 +1098,9 @@ MonoBehaviour:
   target: {fileID: 0}
   timeLeft: 0
   reactionObjects:
-  - obj: {fileID: 0}
-    reaction: 3
-  - obj: {fileID: 0}
+  - obj: {fileID: 1387086991958546, guid: c3d8ed5d2e8a12d478329de989c0deb2, type: 2}
     reaction: 0
---- !u!114 &114570070071784538
+--- !u!114 &114649178431199678
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

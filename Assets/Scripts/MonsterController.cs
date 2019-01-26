@@ -67,17 +67,14 @@ public class MonsterController : MonoBehaviour
     {
         foreach (ObjectData objData in reactionObjects)
         {
-            if (objData.obj == _obj)
+            switch (objData.reaction)
             {
-                switch (objData.reaction)
-                {
-                    case ObjectData.REACTION.Love:
-                        Debug.Log("I Loove that");
-                        break;
-                    case ObjectData.REACTION.Hate:
-                        Debug.Log("I hate that");
-                        break;
-                }
+                case ObjectData.REACTION.Love:
+                    Debug.Log("I Loove that");
+                    break;
+                case ObjectData.REACTION.Hate:
+                    Debug.Log("I hate that");
+                    break;
             }
         }
     }
