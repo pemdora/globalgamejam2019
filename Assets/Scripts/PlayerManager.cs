@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class PlayerManager : MonoBehaviour {
 
     public static PlayerManager instance;
-    public Canvas mainCanvas;
 
     public Image scoreUIPlaceHolder;
     public Image scoreUI;
@@ -43,19 +42,16 @@ public class PlayerManager : MonoBehaviour {
         money = 100;
         UpdateMoney(0);
     }
-    
+
     public void UpdateScore(float scoreToAdd)
     {
-        if (score <= scoreMax)
-        {
-            score += scoreToAdd;
-            float widthMax = scoreUIPlaceHolder.rectTransform.sizeDelta.x;
-            float width = score * widthMax / scoreMax;
+        score += scoreToAdd;
+        float widthMax = scoreUIPlaceHolder.rectTransform.sizeDelta.x;
+        float width = score * widthMax / scoreMax;
 
-            Animation anim = scoreUIPlaceHolder.GetComponent<Animation>();
-            anim.Play("ScoreAnimation");
-            scoreUI.rectTransform.sizeDelta = new Vector2(width, scoreUI.rectTransform.sizeDelta.y);
-        }
+        Animation anim = scoreUIPlaceHolder.GetComponent<Animation>();
+        anim.Play("ScoreAnimation");
+        scoreUI.rectTransform.sizeDelta = new Vector2(width, scoreUI.rectTransform.sizeDelta.y);
     }
 
     public float GetScore()
@@ -69,15 +65,13 @@ public class PlayerManager : MonoBehaviour {
         moneyUI.text = money.ToString();
     }
 
-    public void EarnMoney(int moneyEarned, Vector3 uiPosition)
+    public void EarnMoney(int moneyEarned, Vector3 worldPosition)
     {
-        //Debug.Log("money earned : " + moneyEarned);
-        Vector3 screenPos = Camera.main.WorldToScreenPoint(uiPosition);
-        Image coin = Instantiate(coinIcon, mainCanvas.transform);
-        coin.transform.localScale = Vector3.one;
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPosition);
+        coinIcon.rectTransform.position = new Vector3(screenPos.x, screenPos.y);
+        Debug.Log("money earned : " + moneyEarned);
 
-        coin.rectTransform.position = new Vector3(screenPos.x, screenPos.y);
-        StartCoroutine(MoveCoinToUIPoint(coin));
+        StartCoroutine(MoveCoinToUIPoint(coinIcon.rectTransform.position));
 
         money += moneyEarned;
         moneyUI.text = money.ToString();
@@ -88,16 +82,17 @@ public class PlayerManager : MonoBehaviour {
         return money;
     }
 
-    private IEnumerator MoveCoinToUIPoint(Image coinIcon)
+    private IEnumerator MoveCoinToUIPoint(Vector3 currentPos)
     {
-        Debug.Log("MoveCoinToUIPoint");
-        while(Vector3.Distance(coinIcon.rectTransform.position, moneyUI.rectTransform.position) > 1.5f)
+        Debug.Log("Start Coroutine");
+        Debug.Log(Vector3.Distance(currentPos, moneyUI.rectTransform.position));
+        while(Vector3.Distance(currentPos, moneyUI.rectTransform.position) > 0.05f)
         {
-            //coinIcon.rectTransform.position = Vector3.Lerp(coinIcon.rectTransform.position, moneyUI.rectTransform.position, 2 * Time.deltaTime);
-            coinIcon.rectTransform.position = Vector3.MoveTowards(coinIcon.rectTransform.position, moneyUI.rectTransform.position, 10f);
+            Debug.Log(currentPos + " ; " + moneyUI.rectTransform.position);
+            Vector3.Lerp(currentPos, moneyUI.rectTransform.position, 2 * Time.deltaTime);
             yield return null;
         }
-        Destroy(coinIcon);
+        Debug.Log("target reached");
 
     }
 }
