@@ -18,11 +18,8 @@ public class ShopScrollList : MonoBehaviour {
     public Text moneyUI;
     public SimpleObjectPool buttonObjectPool;
 
-    private int money;
 
     void Start () {
-        money = PlayerManager.instance.GetMoney();
-
         RefreshDisplay();
 	}
 
@@ -43,5 +40,10 @@ public class ShopScrollList : MonoBehaviour {
             SampleButton sampleButton = newButton.GetComponent<SampleButton>();
             sampleButton.Setup(item, this);
         }
+    }
+
+    public void BuyItem(int price)
+    {
+        //PlayerManager.instance.UpdateMoney();
     }
 }

@@ -36,10 +36,10 @@ public class PlayerManager : MonoBehaviour {
 
         score = 2.6f;
         scoreMax = 5.0f;
+        UpdateScore(0.0f);
 
         money = 100;
-
-        UpdateScore(0.0f);
+        UpdateMoney(0);
     }
 
     public void UpdateScore(float scoreToAdd)
