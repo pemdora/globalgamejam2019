@@ -10,8 +10,12 @@ public class PlayerManager : MonoBehaviour {
     public Image scoreUIPlaceHolder;
     public Image scoreUI;
 
+    public Text moneyUI;
+
     private float score;
     private float scoreMax;
+
+    private int money;
 
     void Awake()
     {
@@ -33,6 +37,8 @@ public class PlayerManager : MonoBehaviour {
         score = 2.6f;
         scoreMax = 5.0f;
 
+        money = 100;
+
         UpdateScore(0.0f);
     }
 
@@ -49,4 +55,14 @@ public class PlayerManager : MonoBehaviour {
         return score;
     }
 
+    public void UpdateMoney(int moneyToAdd)
+    {
+        money += moneyToAdd;
+        moneyUI.text = money.ToString();
+    }
+
+    public int GetMoney()
+    {
+        return money;
+    }
 }
