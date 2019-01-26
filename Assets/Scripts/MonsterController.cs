@@ -83,14 +83,12 @@ public class MonsterController : MonoBehaviour
         {
             if(!animator.GetBool("angry") && !animator.GetBool("happy"))
             {
-                Debug.Log("go");
                 GetComponent<NavMeshAgent>().isStopped = false;
                 animator.SetBool("walking", true);
                 MoveTo(target); // need to be called once to be cleaner
             }
             else
             {
-                Debug.Log("stop");
                 Stop();
             }
         }
