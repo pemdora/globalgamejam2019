@@ -11,6 +11,7 @@ public class PlayerManager : MonoBehaviour {
     public Image scoreUI;
 
     public Text moneyUI;
+    public Image coinIcon;
 
     private float score;
     private float scoreMax;
@@ -47,6 +48,9 @@ public class PlayerManager : MonoBehaviour {
         score += scoreToAdd;
         float widthMax = scoreUIPlaceHolder.rectTransform.sizeDelta.x;
         float width = score * widthMax / scoreMax;
+
+        Animation anim = scoreUIPlaceHolder.GetComponent<Animation>();
+        anim.Play("ScoreAnimation");
         scoreUI.rectTransform.sizeDelta = new Vector2(width, scoreUI.rectTransform.sizeDelta.y);
     }
 
@@ -61,8 +65,34 @@ public class PlayerManager : MonoBehaviour {
         moneyUI.text = money.ToString();
     }
 
+    public void EarnMoney(int moneyEarned, Vector3 worldPosition)
+    {
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPosition);
+        coinIcon.rectTransform.position = new Vector3(screenPos.x, screenPos.y);
+        Debug.Log("money earned : " + moneyEarned);
+
+        StartCoroutine(MoveCoinToUIPoint(coinIcon.rectTransform.position));
+
+        money += moneyEarned;
+        moneyUI.text = money.ToString();
+    }
+
     public int GetMoney()
     {
         return money;
+    }
+
+    private IEnumerator MoveCoinToUIPoint(Vector3 currentPos)
+    {
+        Debug.Log("Start Coroutine");
+        Debug.Log(Vector3.Distance(currentPos, moneyUI.rectTransform.position));
+        while(Vector3.Distance(currentPos, moneyUI.rectTransform.position) > 0.05f)
+        {
+            Debug.Log(currentPos + " ; " + moneyUI.rectTransform.position);
+            Vector3.Lerp(currentPos, moneyUI.rectTransform.position, 2 * Time.deltaTime);
+            yield return null;
+        }
+        Debug.Log("target reached");
+
     }
 }

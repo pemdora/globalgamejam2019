@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 224092680088240930}
   - component: {fileID: 222001990041487154}
   - component: {fileID: 114835802910308324}
+  - component: {fileID: 111229646932604908}
   m_Layer: 5
   m_Name: ScoreBackground
   m_TagString: Untagged
@@ -63,6 +64,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!111 &111229646932604908
+Animation:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1765639036025166}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 634bb279753272b4f9357db2ef4da0dd, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 634bb279753272b4f9357db2ef4da0dd, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &114530452945601294
 MonoBehaviour:
   m_ObjectHideFlags: 1
