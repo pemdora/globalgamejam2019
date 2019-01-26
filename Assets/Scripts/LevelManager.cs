@@ -63,7 +63,7 @@ public class LevelManager : MonoBehaviour
 
         monsterC.target = newPOI;
         monsterC.timeLeft = newPOI.GetComponent<RoomObject>().time;
-        
+        monsterC.occupyplace = false;
         monsterC.actionchosen = false;
     }
 

@@ -10,10 +10,11 @@ public class MonsterController : MonoBehaviour
     public bool occupyplace;
     [HideInInspector]
     public bool actionchosen;
-    [HideInInspector]
     public GameObject target;
     [HideInInspector]
     public float timeLeft;
+    public float canReactDelay;
+    private bool canReact;
 
     [SerializeField]
     private Image emoteImg;
@@ -38,6 +39,7 @@ public class MonsterController : MonoBehaviour
         occupyplace = false;
         playingImgAnimation = false;
         actionchosen = false;
+        canReact = true;
     }
 
     // Move to a position
@@ -52,6 +54,12 @@ public class MonsterController : MonoBehaviour
         GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
     }
 
+    // Move to a gameobject
+    public void Stop()
+    {
+        GetComponent<NavMeshAgent>().isStopped = true;
+    }
+
     void Update()
     {
         // Image facing billboard
@@ -64,17 +72,21 @@ public class MonsterController : MonoBehaviour
         {
             Debug.Log("The active camera should be tagged with MainCamera ");
         }
-
-        // Move only if the monster is not angry or happy
-        if (animator.GetBool("walking") && !animator.GetBool("angry") && !animator.GetBool("happy"))
-        {
-            MoveTo(target);
-        }
+        
 
         // moving if target is not reached => move
-        if (target != null && Vector3.Distance(this.transform.position, target.transform.position) > 2f)
+        if (target != null && Vector3.Distance(this.transform.position, target.transform.position) > 3f)
         {
-            animator.SetBool("walking", true);
+            if(!animator.GetBool("angry") && !animator.GetBool("happy"))
+            {
+                GetComponent<NavMeshAgent>().isStopped = false;
+                animator.SetBool("walking", true);
+                MoveTo(target); // need to be called once to be cleaner
+            }
+            else
+            {
+                Stop();
+            }
         }
         else // target reached
         {
@@ -133,7 +145,6 @@ public class MonsterController : MonoBehaviour
         yield return new WaitForSeconds(time);
         animator.SetBool("walking", true);
         animator.SetBool(animationName, value);
-        LevelManager.instance.AssignPOI(this); // change target
     }
 
     IEnumerator ChangeAnimation(string animationName, bool value, float time)
@@ -145,8 +156,10 @@ public class MonsterController : MonoBehaviour
     // Move to a gameobject
     public void ReactToObject(GameObject _obj)
     {
-        if (!playingImgAnimation)
+        if (!playingImgAnimation && !occupyplace && !actionchosen && canReact) // if the monster is not occupied by something else
         {
+            canReact = false;
+            Invoke("BlockReaction", canReactDelay);
             foreach (ObjectData objData in reactionObjects)
             {
                 if (_obj.name.Equals(objData.obj.name + "(Clone)"))
@@ -179,6 +192,11 @@ public class MonsterController : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void BlockReaction()
+    {
+        canReact = true;
     }
 
     // NOT USED ANYMORE
@@ -215,6 +233,7 @@ public class MonsterController : MonoBehaviour
 
     public void StartEmoteAnim()
     {
+        animator.SetBool("walking", false);
         CancelInvoke("FinishedEmoteAnim"); // Cancel other animation
         CancelInvoke("FinishedAction"); // Cancel other animation
 
@@ -226,6 +245,7 @@ public class MonsterController : MonoBehaviour
     public void FinishedEmoteAnim()
     {
         playingImgAnimation = false;
+        animator.SetBool("walking", true);
     }
 
     public void StartFinishedAction()

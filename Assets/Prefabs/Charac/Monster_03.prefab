@@ -929,7 +929,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1629056819257604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -3.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4836384099999710}
@@ -1415,6 +1415,7 @@ MonoBehaviour:
   actionchosen: 0
   target: {fileID: 0}
   timeLeft: 0
+  canReactDelay: 2
   emoteImg: {fileID: 114161845207465804}
   star: {fileID: 21300000, guid: f15f725add1e22d4ea6359910cf4c75b, type: 3}
   angryAnimationLenght: 2
@@ -1522,7 +1523,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1914869409223242}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.23630148
   m_Height: 2.001161
   m_Direction: 1
