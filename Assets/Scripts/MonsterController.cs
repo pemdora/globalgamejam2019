@@ -12,6 +12,8 @@ public class MonsterController : MonoBehaviour
     [HideInInspector]
     public float timeLeft;
 
+    public List<ObjectData> reactionObjects;
+
     private void Start()
     {
         MovementManager.instance.AssignPOI(this);
@@ -37,18 +39,13 @@ public class MonsterController : MonoBehaviour
         {
             MoveTo(target);
         }
-        else if(doingAction)
+        else if (doingAction)
         {
-            Debug.Log(timeLeft);
             timeLeft -= Time.deltaTime;
             if (timeLeft < 0)
             {
                 MovementManager.instance.AssignPOI(this);
             }
-        }
-        else
-        {
-            Debug.Log("lolol");
         }
 
         /*
@@ -63,5 +60,22 @@ public class MonsterController : MonoBehaviour
                 MoveTo(hit.point);
             }
         }*/
+    }
+
+    // Move to a gameobject
+    public void ReactToObject(GameObject _obj)
+    {
+        foreach (ObjectData objData in reactionObjects)
+        {
+            switch (objData.reaction)
+            {
+                case ObjectData.REACTION.Love:
+                    Debug.Log("I Loove that");
+                    break;
+                case ObjectData.REACTION.Hate:
+                    Debug.Log("I hate that");
+                    break;
+            }
+        }
     }
 }
