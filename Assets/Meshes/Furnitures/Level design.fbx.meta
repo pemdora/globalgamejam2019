@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: eff3d6ea011bd1a4f965fd4b5c9b3bd4
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bathtub
+    100002: Bed
+    100004: Couch
+    100006: Couch_2
+    100008: Cushion
+    100010: Ground
+    100012: Hoven
+    100014: Jardin
+    100016: //RootNode
+    100018: Mur
+    100020: Mur_tranpsparent
+    100022: Plan
+    100024: Plant
+    100026: Robinet
+    100028: Table
+    100030: TV_table_1
+    100032: WC
+    100034: Detail
+    400000: Bathtub
+    400002: Bed
+    400004: Couch
+    400006: Couch_2
+    400008: Cushion
+    400010: Ground
+    400012: Hoven
+    400014: Jardin
+    400016: //RootNode
+    400018: Mur
+    400020: Mur_tranpsparent
+    400022: Plan
+    400024: Plant
+    400026: Robinet
+    400028: Table
+    400030: TV_table_1
+    400032: WC
+    400034: Detail
+    2100000: No Name
+    2300000: Bathtub
+    2300002: Bed
+    2300004: Couch_2
+    2300006: Cushion
+    2300008: Ground
+    2300010: Hoven
+    2300012: Jardin
+    2300014: Mur
+    2300016: Mur_tranpsparent
+    2300018: Plan
+    2300020: Plant
+    2300022: Robinet
+    2300024: Table
+    2300026: TV_table_1
+    2300028: WC
+    2300030: Detail
+    3300000: Bathtub
+    3300002: Bed
+    3300004: Couch_2
+    3300006: Cushion
+    3300008: Ground
+    3300010: Hoven
+    3300012: Jardin
+    3300014: Mur
+    3300016: Mur_tranpsparent
+    3300018: Plan
+    3300020: Plant
+    3300022: Robinet
+    3300024: Table
+    3300026: TV_table_1
+    3300028: WC
+    3300030: Detail
+    4300000: Mur_tranpsparent
+    4300002: Jardin
+    4300004: Mur
+    4300006: Plan
+    4300008: Bathtub
+    4300010: Robinet
+    4300012: Hoven
+    4300014: TV_table_1
+    4300016: Plant
+    4300018: Ground
+    4300020: WC
+    4300022: Bed
+    4300024: Table
+    4300026: Couch_2
+    4300028: Cushion
+    4300030: Detail
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
