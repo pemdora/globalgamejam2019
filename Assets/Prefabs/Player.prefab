@@ -51,3 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fc78ca9ac1c394493c3698899cbccc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCanvas: {fileID: 0}
+  scoreUIPlaceHolder: {fileID: 0}
+  scoreUI: {fileID: 0}
+  moneyUI: {fileID: 0}
+  coinIcon: {fileID: 114279493598886144, guid: 9c7d20ffe5ed5f54bb618946eb0d134e, type: 2}
