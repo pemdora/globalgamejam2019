@@ -7,7 +7,9 @@ using UnityEngine.UI;
 public class MonsterController : MonoBehaviour
 {
     [HideInInspector]
-    public bool doingAction;
+    public bool occupyplace;
+    [HideInInspector]
+    public bool actionchosen;
     [HideInInspector]
     public GameObject target;
     [HideInInspector]
@@ -17,6 +19,8 @@ public class MonsterController : MonoBehaviour
     private Image emoteImg;
     [SerializeField]
     private Sprite star;
+    
+    private Animator animator;
 
 
     private bool playingImgAnimation;
@@ -25,9 +29,11 @@ public class MonsterController : MonoBehaviour
 
     private void Start()
     {
+        animator = this.GetComponentInChildren<Animator>();
         LevelManager.instance.AssignPOI(this);
-        doingAction = true;
+        occupyplace = false;
         playingImgAnimation = false;
+        actionchosen = false;
     }
 
     // Move to a position
@@ -55,21 +61,45 @@ public class MonsterController : MonoBehaviour
             Debug.Log("The active camera should be tagged with MainCamera ");
         }
 
-        // moving if target is not reached
-        if (Vector3.Distance(this.transform.position, target.transform.position) > 1.5f)
+        // moving if target is not reached => move
+        if (target!=null && Vector3.Distance(this.transform.position, target.transform.position) > 2f)
         {
+            animator.SetBool("walking", true);
             MoveTo(target);
         }
-        else if (doingAction)
+        else // target reached
         {
-            timeLeft -= Time.deltaTime;
-            target.GetComponent<RoomObject>().occupied = true;
-            if (timeLeft < 0)
+            if (!actionchosen)
             {
-                StartFinishedAction();
-                target.GetComponent<RoomObject>().occupied = false;
+                animator.SetBool("walking", false);
+                // room is occupied, monster is angry and change target
+                if (target.GetComponent<RoomObject>().occupied == true)
+                {
+                    actionchosen = true;
 
-                LevelManager.instance.AssignPOI(this); // Assign POI and set doingAction to false
+                    animator.SetBool("angry", true);
+                    Debug.Log("agnrrrrrrrryyyy");
+                    // monster is angry 
+                    //LevelManager.instance.AssignPOI(this); // change target
+                }
+                // room is free, monster will occupy the room
+                else
+                {
+                    target.GetComponent<RoomObject>().occupied = true;
+                    actionchosen = true;
+                    occupyplace = true;
+                }
+            }
+            else if (occupyplace)
+            {
+                timeLeft -= Time.deltaTime;
+                if (timeLeft < 0)
+                {
+                    StartFinishedAction();
+                    target.GetComponent<RoomObject>().occupied = false;
+
+                    LevelManager.instance.AssignPOI(this); // Assign POI and set doingAction to false
+                }
             }
         }
 
@@ -185,7 +215,6 @@ public class MonsterController : MonoBehaviour
 
     public void FinishedAction()
     {
-        Debug.Log("Finished");
         playingImgAnimation = false;
         PlayerManager.instance.UpdateScore(0.2f);
         CancelInvoke("FinishedAction");
