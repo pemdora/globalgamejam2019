@@ -21,6 +21,10 @@ public class MonsterController : MonoBehaviour
     private Sprite star;
     
     private Animator animator;
+    [SerializeField]
+    private float angryAnimationLenght;
+    [SerializeField]
+    private float happyAnimationLenght;
 
 
     private bool playingImgAnimation;
@@ -61,11 +65,16 @@ public class MonsterController : MonoBehaviour
             Debug.Log("The active camera should be tagged with MainCamera ");
         }
 
+        // Move only if the monster is not angry or happy
+        if (animator.GetBool("walking") && !animator.GetBool("angry") && !animator.GetBool("happy"))
+        {
+            MoveTo(target);
+        }
+
         // moving if target is not reached => move
-        if (target!=null && Vector3.Distance(this.transform.position, target.transform.position) > 2f)
+        if (target != null && Vector3.Distance(this.transform.position, target.transform.position) > 2f)
         {
             animator.SetBool("walking", true);
-            MoveTo(target);
         }
         else // target reached
         {
@@ -78,9 +87,11 @@ public class MonsterController : MonoBehaviour
                     actionchosen = true;
 
                     animator.SetBool("angry", true);
-                    Debug.Log("agnrrrrrrrryyyy");
+                    emoteImg.sprite = reactionObjects.Find(x => x.reaction == ObjectData.REACTION.Hate).emote;
+
+                    StartEmoteAnim();
+                    StartCoroutine(ChangeAnimationAndAssignTarget("angry", false, angryAnimationLenght));
                     // monster is angry 
-                    //LevelManager.instance.AssignPOI(this); // change target
                 }
                 // room is free, monster will occupy the room
                 else
@@ -115,6 +126,20 @@ public class MonsterController : MonoBehaviour
                 MoveTo(hit.point);
             }
         }*/
+    }
+
+    IEnumerator ChangeAnimationAndAssignTarget(string animationName, bool value, float time)
+    {
+        yield return new WaitForSeconds(time);
+        animator.SetBool("walking", true);
+        animator.SetBool(animationName, value);
+        LevelManager.instance.AssignPOI(this); // change target
+    }
+
+    IEnumerator ChangeAnimation(string animationName, bool value, float time)
+    {
+        yield return new WaitForSeconds(time);
+        animator.SetBool(animationName, value);
     }
 
     // Move to a gameobject
@@ -192,8 +217,6 @@ public class MonsterController : MonoBehaviour
 
         Invoke("FinishedEmoteAnim", emoteImg.GetComponent<Animation>()["EmotionAnimation"].length);
     }
-
-
     public void FinishedEmoteAnim()
     {
         playingImgAnimation = false;
