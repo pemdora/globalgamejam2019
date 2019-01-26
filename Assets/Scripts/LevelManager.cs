@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementManager : MonoBehaviour {
+public class LevelManager : MonoBehaviour {
 
     public List<GameObject> pointOfInterest;
-    [SerializeField]
     private List<GameObject> freePointOfInterest;
+    [SerializeField]
+    private List<GameObject> shopableObjects;
+    [SerializeField]
+    private Transform movableObjectsParent;
 
-    public static MovementManager instance;
+    public static LevelManager instance;
     
     void Awake()
     {
@@ -48,4 +51,14 @@ public class MovementManager : MonoBehaviour {
         monsterC.doingAction = true;
     }
     
+    public void SpawnObject(string objectName)
+    {
+        foreach(GameObject obj in shopableObjects)
+        {
+            if (obj.name.Equals(objectName))
+            {
+                Instantiate(obj, movableObjectsParent);
+            }
+        }
+    }
 }

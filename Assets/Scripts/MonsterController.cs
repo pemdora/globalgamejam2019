@@ -17,7 +17,7 @@ public class MonsterController : MonoBehaviour
     private Image emoteImg;
     [SerializeField]
     private Sprite star;
-    
+
 
     private bool playingImgAnimation;
 
@@ -25,7 +25,7 @@ public class MonsterController : MonoBehaviour
 
     private void Start()
     {
-        MovementManager.instance.AssignPOI(this);
+        LevelManager.instance.AssignPOI(this);
         doingAction = true;
         playingImgAnimation = false;
     }
@@ -69,7 +69,7 @@ public class MonsterController : MonoBehaviour
                 StartFinishedAction();
                 target.GetComponent<RoomObject>().occupied = false;
 
-                MovementManager.instance.AssignPOI(this); // Assign POI and set doingAction to false
+                LevelManager.instance.AssignPOI(this); // Assign POI and set doingAction to false
             }
         }
 
@@ -94,7 +94,7 @@ public class MonsterController : MonoBehaviour
         {
             foreach (ObjectData objData in reactionObjects)
             {
-                if (_obj.name.Equals(objData.obj.name))
+                if (_obj.name.Equals(objData.obj.name + "(Clone)"))
                 {
                     switch (objData.reaction)
                     {
@@ -120,7 +120,7 @@ public class MonsterController : MonoBehaviour
     }
 
     // NOT USED ANYMORE
-    IEnumerator FadeINandOutImage(float alpha,bool fadeAway, Image img, float speed)
+    IEnumerator FadeINandOutImage(float alpha, bool fadeAway, Image img, float speed)
     {
         // fade from opaque to transparent
         if (fadeAway)

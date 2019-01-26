@@ -1174,10 +1174,10 @@ MonoBehaviour:
   emoteImg: {fileID: 114568143475995552}
   star: {fileID: 21300000, guid: f15f725add1e22d4ea6359910cf4c75b, type: 3}
   reactionObjects:
-  - obj: {fileID: 1387086991958546, guid: c3d8ed5d2e8a12d478329de989c0deb2, type: 2}
+  - obj: {fileID: 1838183985299538, guid: ca57d7cb322c18e4b9f5780ac57a5a98, type: 2}
     reaction: 0
     emote: {fileID: 21300000, guid: fbd9a822e54bc67488dfe27e74eeba00, type: 3}
-  - obj: {fileID: 1387086991958546, guid: c7432e6719976554e82e7517585fca31, type: 2}
+  - obj: {fileID: 1329693017182796, guid: 1909aacff0508c9438d1ea35edd12436, type: 2}
     reaction: 3
     emote: {fileID: 21300000, guid: e0f1eda761bf3db45880aa444442160e, type: 3}
 --- !u!114 &114568143475995552
@@ -1186,7 +1186,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1995109896023052}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
