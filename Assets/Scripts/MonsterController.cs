@@ -19,7 +19,7 @@ public class MonsterController : MonoBehaviour
     private Image emoteImg;
     [SerializeField]
     private Sprite star;
-    
+
     private Animator animator;
     [SerializeField]
     private float angryAnimationLenght;
@@ -86,6 +86,7 @@ public class MonsterController : MonoBehaviour
                 {
                     actionchosen = true;
 
+                    PlayerManager.instance.UpdateScore(-0.5f);
                     animator.SetBool("angry", true);
                     emoteImg.sprite = reactionObjects.Find(x => x.reaction == ObjectData.REACTION.Hate).emote;
 
@@ -120,7 +121,6 @@ public class MonsterController : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-
             if (Physics.Raycast(ray, out hit))
             {
                 MoveTo(hit.point);
@@ -158,11 +158,17 @@ public class MonsterController : MonoBehaviour
                             StartEmoteAnim();
                             //StartCoroutine(FadeINandOutImage(0.7f, false, emoteImg, 0.5f));
                             // Score
+                            animator.SetBool("happy", true);
+                            StartCoroutine(ChangeAnimationAndAssignTarget("happy", false, angryAnimationLenght));
+
                             PlayerManager.instance.UpdateScore(0.1f);
-                            PlayerManager.instance.UpdateMoney(10);
+                            PlayerManager.instance.EarnMoney(10, this.transform.position);
                             break;
                         case ObjectData.REACTION.Hate:
                             emoteImg.sprite = objData.emote;
+
+                            animator.SetBool("angry", true);
+                            StartCoroutine(ChangeAnimationAndAssignTarget("angry", false, angryAnimationLenght));
 
                             StartEmoteAnim();
                             //StartCoroutine(FadeINandOutImage(0.7f, false, emoteImg, 0.5f));
