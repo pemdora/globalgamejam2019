@@ -51,12 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf36eb0fcb223454aaa0f561b6531495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointOfInterest:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  roomObjects: {fileID: 0}
   shopableObjects:
   - {fileID: 1329693017182796, guid: 1909aacff0508c9438d1ea35edd12436, type: 2}
-  - {fileID: 1838183985299538, guid: ca57d7cb322c18e4b9f5780ac57a5a98, type: 2}
+  - {fileID: 1988100554732978, guid: ed8501d7eb357714ca435e500f8682bb, type: 2}
+  - {fileID: 1172571696453054, guid: f11e9958170e7a34c8b8b7c26d30a95b, type: 2}
   movableObjectsParent: {fileID: 0}
