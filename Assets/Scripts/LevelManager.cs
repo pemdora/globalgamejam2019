@@ -23,6 +23,21 @@ public class LevelManager : MonoBehaviour
         {
             //if not, set instance to this
             instance = this;
+
+            // Set point of interest
+            freePointOfInterest = new List<GameObject>();
+            foreach (Transform poi in roomObjects.transform)
+            {
+                freePointOfInterest.Add(poi.gameObject);
+            }
+
+            // Set spawn points for shoppable items
+            Transform spawnPointsTransform = movableObjectsParent.transform.Find("SpawnPoints");
+            spawnPoints = new List<Transform>();
+            foreach (Transform tr in spawnPointsTransform)
+            {
+                spawnPoints.Add(tr);
+            }
         }
         //If instance already exists and it's not this:
         else if (instance != this)
@@ -31,24 +46,6 @@ public class LevelManager : MonoBehaviour
 
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
-    }
-
-    private void Start()
-    {
-        // Set point of interest
-        freePointOfInterest = new List<GameObject>();
-        foreach (Transform poi in roomObjects.transform)
-        {
-            freePointOfInterest.Add(poi.gameObject);
-        }
-
-        // Set spawn points for shoppable items
-        Transform spawnPointsTransform = movableObjectsParent.transform.Find("SpawnPoints");
-        spawnPoints = new List<Transform>();
-        foreach (Transform tr in spawnPointsTransform)
-        {
-            spawnPoints.Add(tr);
-        }
     }
 
     public void AssignPOI(MonsterController monsterC)

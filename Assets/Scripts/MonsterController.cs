@@ -8,6 +8,7 @@ public class MonsterController : MonoBehaviour
 {
     [HideInInspector]
     public bool occupyplace;
+    [HideInInspector]
     public bool actionchosen;
     [HideInInspector]
     public GameObject target;
@@ -18,6 +19,8 @@ public class MonsterController : MonoBehaviour
     private Image emoteImg;
     [SerializeField]
     private Sprite star;
+    
+    private Animator animator;
 
 
     private bool playingImgAnimation;
@@ -26,6 +29,7 @@ public class MonsterController : MonoBehaviour
 
     private void Start()
     {
+        animator = this.GetComponentInChildren<Animator>();
         LevelManager.instance.AssignPOI(this);
         occupyplace = false;
         playingImgAnimation = false;
@@ -58,22 +62,25 @@ public class MonsterController : MonoBehaviour
         }
 
         // moving if target is not reached => move
-        if (Vector3.Distance(this.transform.position, target.transform.position) > 2f)
+        if (target!=null && Vector3.Distance(this.transform.position, target.transform.position) > 2f)
         {
+            animator.SetBool("walking", true);
             MoveTo(target);
         }
         else // target reached
         {
             if (!actionchosen)
             {
+                animator.SetBool("walking", false);
                 // room is occupied, monster is angry and change target
                 if (target.GetComponent<RoomObject>().occupied == true)
                 {
                     actionchosen = true;
 
+                    animator.SetBool("angry", true);
                     Debug.Log("agnrrrrrrrryyyy");
                     // monster is angry 
-                    LevelManager.instance.AssignPOI(this); // change target
+                    //LevelManager.instance.AssignPOI(this); // change target
                 }
                 // room is free, monster will occupy the room
                 else
