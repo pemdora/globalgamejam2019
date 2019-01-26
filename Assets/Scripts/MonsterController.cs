@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class MonsterController : MonoBehaviour
 {
@@ -12,12 +13,20 @@ public class MonsterController : MonoBehaviour
     [HideInInspector]
     public float timeLeft;
 
+    [SerializeField]
+    private Image emoteImg;
+    [SerializeField]
+    private Sprite star;
+
+    private bool playingImgAnimation;
+
     public List<ObjectData> reactionObjects;
 
     private void Start()
     {
         MovementManager.instance.AssignPOI(this);
         doingAction = true;
+        playingImgAnimation = false;
     }
 
     // Move to a position
@@ -42,9 +51,13 @@ public class MonsterController : MonoBehaviour
         else if (doingAction)
         {
             timeLeft -= Time.deltaTime;
+            target.GetComponent<RoomObject>().occupied = true;
             if (timeLeft < 0)
             {
-                MovementManager.instance.AssignPOI(this);
+                StartFinishedAction();
+                target.GetComponent<RoomObject>().occupied = false;
+
+                MovementManager.instance.AssignPOI(this); // Assign POI and set doingAction to false
             }
         }
 
@@ -65,20 +78,102 @@ public class MonsterController : MonoBehaviour
     // Move to a gameobject
     public void ReactToObject(GameObject _obj)
     {
-        foreach (ObjectData objData in reactionObjects)
+        if (!playingImgAnimation)
         {
-            if (objData.obj == _obj)
+            foreach (ObjectData objData in reactionObjects)
             {
-                switch (objData.reaction)
+                if (_obj.name.Equals(objData.obj.name))
                 {
-                    case ObjectData.REACTION.Love:
-                        Debug.Log("I Loove that");
-                        break;
-                    case ObjectData.REACTION.Hate:
-                        Debug.Log("I hate that");
-                        break;
+                    switch (objData.reaction)
+                    {
+                        case ObjectData.REACTION.Love:
+                            emoteImg.sprite = objData.emote;
+                            StartEmoteAnim();
+                            //StartCoroutine(FadeINandOutImage(0.7f, false, emoteImg, 0.5f));
+                            // Score
+                            PlayerManager.instance.UpdateScore(0.1f);
+                            break;
+                        case ObjectData.REACTION.Hate:
+                            emoteImg.sprite = objData.emote;
+
+                            StartEmoteAnim();
+                            //StartCoroutine(FadeINandOutImage(0.7f, false, emoteImg, 0.5f));
+                            // Score
+                            PlayerManager.instance.UpdateScore(-0.5f);
+                            break;
+                    }
                 }
             }
         }
+    }
+
+    IEnumerator FadeINandOutImage(float alpha,bool fadeAway, Image img, float speed)
+    {
+        // fade from opaque to transparent
+        if (fadeAway)
+        {
+            // loop over 1 second backwards
+            for (float i = alpha; i >= 0; i -= Time.deltaTime * speed)
+            {
+                // set color with i as alpha
+                img.color = new Color(1, 1, 1, i);
+                yield return null;
+            }
+            img.enabled = false;
+            playingImgAnimation = false;
+        }
+        // fade from transparent to opaque
+        else
+        {
+            playingImgAnimation = true;
+            img.enabled = true;
+            // loop over 0.5 second
+            for (float i = 0; i <= alpha; i += Time.deltaTime * speed)
+            {
+                // set color with i as alpha
+                img.color = new Color(1, 1, 1, i);
+                yield return null;
+            }
+            StartCoroutine(FadeINandOutImage(alpha, true, img, speed));
+        }
+    }
+
+    public void StartEmoteAnim()
+    {
+        CancelInvoke("FinishedEmoteAnim"); // Cancel other animation
+        CancelInvoke("FinishedAction"); // Cancel other animation
+
+        playingImgAnimation = true;
+        emoteImg.GetComponent<Animation>().Play("EmotionAnimation");
+
+        Invoke("FinishedEmoteAnim", emoteImg.GetComponent<Animation>()["EmotionAnimation"].length);
+    }
+
+
+    public void FinishedEmoteAnim()
+    {
+        playingImgAnimation = false;
+    }
+
+    public void StartFinishedAction()
+    {
+        CancelInvoke("FinishedEmoteAnim"); // Cancel other animation
+        CancelInvoke("FinishedAction"); // Cancel other animation
+
+        emoteImg.enabled = true;
+        emoteImg.sprite = star;
+
+        playingImgAnimation = true;
+        emoteImg.GetComponent<Animation>().Play("StarAnimation");
+
+        Invoke("FinishedAction", emoteImg.GetComponent<Animation>()["StarAnimation"].clip.length);
+    }
+
+    public void FinishedAction()
+    {
+        Debug.Log("Finished");
+        playingImgAnimation = false;
+        PlayerManager.instance.UpdateScore(0.2f);
+        CancelInvoke("FinishedAction");
     }
 }

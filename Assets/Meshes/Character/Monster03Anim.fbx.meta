@@ -1,0 +1,295 @@
+fileFormatVersion: 2
+guid: b0f77214aa58c3d4289226409b9d5ceb
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: ARMS
+    100002: BODY
+    100004: FACE
+    100006: Larm
+    100008: LArm01
+    100010: LArm02
+    100012: LArm03
+    100014: LArm04
+    100016: LArm05
+    100018: LArm06
+    100020: LArm06_Cible
+    100022: LEGS
+    100024: LFoot
+    100026: LFoot_Cible
+    100028: LHips
+    100030: "LHips_P\xF4le"
+    100032: LKnee
+    100034: LLeg
+    100036: LToe
+    100038: LtoeEnd
+    100040: Monster03
+    100042: //RootNode
+    100044: Rarm
+    100046: RArm01
+    100048: RArm02
+    100050: RArm03
+    100052: RArm04
+    100054: RArm05
+    100056: RArm06
+    100058: RArm06_CibRe
+    100060: RFoot
+    100062: RFoot_CibRe
+    100064: RHips
+    100066: "RHips_P\xF4Re"
+    100068: RKnee
+    100070: RLeg
+    100072: RToe
+    100074: RtoeEnd
+    400000: ARMS
+    400002: BODY
+    400004: FACE
+    400006: Larm
+    400008: LArm01
+    400010: LArm02
+    400012: LArm03
+    400014: LArm04
+    400016: LArm05
+    400018: LArm06
+    400020: LArm06_Cible
+    400022: LEGS
+    400024: LFoot
+    400026: LFoot_Cible
+    400028: LHips
+    400030: "LHips_P\xF4le"
+    400032: LKnee
+    400034: LLeg
+    400036: LToe
+    400038: LtoeEnd
+    400040: Monster03
+    400042: //RootNode
+    400044: Rarm
+    400046: RArm01
+    400048: RArm02
+    400050: RArm03
+    400052: RArm04
+    400054: RArm05
+    400056: RArm06
+    400058: RArm06_CibRe
+    400060: RFoot
+    400062: RFoot_CibRe
+    400064: RHips
+    400066: "RHips_P\xF4Re"
+    400068: RKnee
+    400070: RLeg
+    400072: RToe
+    400074: RtoeEnd
+    2100000: No Name
+    2300000: BODY
+    2300002: FACE
+    3300000: BODY
+    3300002: FACE
+    4300000: BODY
+    4300002: RLeg
+    4300004: LLeg
+    4300006: Rarm
+    4300008: Larm
+    4300010: FACE
+    7400000: Monstre03Idle
+    7400002: Monstre03Walk
+    7400004: Monstre03Happy
+    7400006: Monstre03Angry
+    9500000: //RootNode
+    13700000: Larm
+    13700002: LLeg
+    13700004: Rarm
+    13700006: RLeg
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Monstre03Idle
+      takeName: Cinema_4D_Prise Principale
+      firstFrame: 0
+      lastFrame: 119
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Monstre03Walk
+      takeName: Cinema_4D_Prise Principale
+      firstFrame: 120
+      lastFrame: 140
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Monstre03Happy
+      takeName: Cinema_4D_Prise Principale
+      firstFrame: 141
+      lastFrame: 160
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Monstre03Angry
+      takeName: Cinema_4D_Prise Principale
+      firstFrame: 161
+      lastFrame: 190
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Detector : MonoBehaviour {
 
+    private void Start()
+    {
+
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Movable")

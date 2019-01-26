@@ -48,6 +48,7 @@ public class PlayerManager : MonoBehaviour {
         float widthMax = scoreUIPlaceHolder.rectTransform.sizeDelta.x;
         float width = score * widthMax / scoreMax;
         scoreUI.rectTransform.sizeDelta = new Vector2(width, scoreUI.rectTransform.sizeDelta.y);
+        Debug.Log("score " + score);
     }
 
     public float GetScore()

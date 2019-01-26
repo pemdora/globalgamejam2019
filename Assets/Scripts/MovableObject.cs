@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DragAndDrop : MonoBehaviour {
+public class MovableObject : MonoBehaviour {
 
     private Vector3 screenSpace;
     private Vector3 offset;
