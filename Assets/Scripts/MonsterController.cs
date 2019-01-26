@@ -17,6 +17,7 @@ public class MonsterController : MonoBehaviour
     private Image emoteImg;
     [SerializeField]
     private Sprite star;
+    
 
     private bool playingImgAnimation;
 
@@ -43,6 +44,17 @@ public class MonsterController : MonoBehaviour
 
     void Update()
     {
+        // Image facing billboard
+        if (Camera.main != null)
+        {
+            emoteImg.transform.LookAt(transform.position + Camera.main.transform.rotation * Vector3.forward,
+                Camera.main.transform.rotation * Vector3.up);
+        }
+        else
+        {
+            Debug.Log("The active camera should be tagged with MainCamera ");
+        }
+
         // moving if target is not reached
         if (Vector3.Distance(this.transform.position, target.transform.position) > 1.5f)
         {
@@ -107,6 +119,7 @@ public class MonsterController : MonoBehaviour
         }
     }
 
+    // NOT USED ANYMORE
     IEnumerator FadeINandOutImage(float alpha,bool fadeAway, Image img, float speed)
     {
         // fade from opaque to transparent
