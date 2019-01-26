@@ -26,11 +26,10 @@ public class SampleButton : MonoBehaviour {
         iconImage.sprite = item.icon;
         priceText.text = item.price.ToString();
         scrollList = currentScrollList;
-
     }
 
     public void HandleClick()
     {
-    //    scrollList.TryTransferItemToOtherShop(item);
+        scrollList.TryBuyItem(item.price);
     }
 }

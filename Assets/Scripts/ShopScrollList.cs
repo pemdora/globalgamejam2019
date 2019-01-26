@@ -8,7 +8,7 @@ public class Item
 {
     public string itemName;
     public Sprite icon;
-    public float price = 1;
+    public int price = 0;
 }
 
 public class ShopScrollList : MonoBehaviour {
@@ -42,8 +42,11 @@ public class ShopScrollList : MonoBehaviour {
         }
     }
 
-    public void BuyItem(int price)
+    public void TryBuyItem(int price)
     {
-        //PlayerManager.instance.UpdateMoney();
+        if(PlayerManager.instance.GetMoney() >= price)
+        {
+            PlayerManager.instance.UpdateMoney(-price);
+        }
     }
 }
