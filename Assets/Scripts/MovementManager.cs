@@ -33,7 +33,6 @@ public class MovementManager : MonoBehaviour {
     {
         int index = Random.Range(0, freePointOfInterest.Count-1);
         GameObject newPOI = freePointOfInterest[index];
-        Debug.Log("index " + index);
 
         
         // while random target is equal to current target

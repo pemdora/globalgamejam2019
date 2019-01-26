@@ -8,7 +8,7 @@ public class Detector : MonoBehaviour {
     {
         if (other.gameObject.tag == "Movable")
         {
-            Debug.Log("I kill you");
+            this.GetComponentInParent<MonsterController>().ReactToObject(other.gameObject);
         }
     }
 }
