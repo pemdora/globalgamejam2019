@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class Item
 {
-    public string itemName;
+    public string name;
     public Sprite icon;
     public int price = 0;
 }
@@ -42,11 +42,13 @@ public class ShopScrollList : MonoBehaviour {
         }
     }
 
-    public void TryBuyItem(int price)
+    public void TryBuyItem(Item item)
     {
-        if(PlayerManager.instance.GetMoney() >= price)
+        if(PlayerManager.instance.GetMoney() >= item.price)
         {
-            PlayerManager.instance.UpdateMoney(-price);
+            PlayerManager.instance.UpdateMoney(-item.price);
+            LevelManager.instance.SpawnObject(item.name);
+            Debug.Log("buy : " + item.name);
         }
     }
 }

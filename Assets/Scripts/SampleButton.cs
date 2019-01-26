@@ -22,7 +22,7 @@ public class SampleButton : MonoBehaviour {
     public void Setup(Item currentItem, ShopScrollList currentScrollList)
     {
         item = currentItem;
-        nameLabel.text = item.itemName;
+        nameLabel.text = item.name;
         iconImage.sprite = item.icon;
         priceText.text = item.price.ToString();
         scrollList = currentScrollList;
@@ -30,6 +30,6 @@ public class SampleButton : MonoBehaviour {
 
     public void HandleClick()
     {
-        scrollList.TryBuyItem(item.price);
+        scrollList.TryBuyItem(item);
     }
 }

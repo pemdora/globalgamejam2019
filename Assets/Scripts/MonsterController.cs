@@ -104,6 +104,7 @@ public class MonsterController : MonoBehaviour
                             //StartCoroutine(FadeINandOutImage(0.7f, false, emoteImg, 0.5f));
                             // Score
                             PlayerManager.instance.UpdateScore(0.1f);
+                            PlayerManager.instance.UpdateMoney(10);
                             break;
                         case ObjectData.REACTION.Hate:
                             emoteImg.sprite = objData.emote;
