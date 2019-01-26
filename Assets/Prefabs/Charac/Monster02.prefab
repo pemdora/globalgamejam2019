@@ -187,6 +187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4449016020819124}
   - component: {fileID: 95910001256056904}
+  - component: {fileID: 136647845528749000}
   m_Layer: 0
   m_Name: Monster02
   m_TagString: Untagged
@@ -782,7 +783,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1408138983046664}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.97, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4722072171729170}
@@ -1167,6 +1168,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &136647845528749000
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1408138983046664}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.29439908
+  m_Height: 2.063733
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9788132, z: 0}
 --- !u!137 &137109782566308704
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
