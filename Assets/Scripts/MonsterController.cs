@@ -87,16 +87,17 @@ public class MonsterController : MonoBehaviour
                     switch (objData.reaction)
                     {
                         case ObjectData.REACTION.Love:
-                            Debug.Log("Love");
                             emoteImg.sprite = objData.emote;
-                            StartCoroutine(FadeINandOutImage(0.7f, false, emoteImg, 0.5f));
+                            StartEmoteAnim();
+                            //StartCoroutine(FadeINandOutImage(0.7f, false, emoteImg, 0.5f));
                             // Score
                             PlayerManager.instance.UpdateScore(0.1f);
                             break;
                         case ObjectData.REACTION.Hate:
-                            Debug.Log("Hate");
                             emoteImg.sprite = objData.emote;
-                            StartCoroutine(FadeINandOutImage(0.7f, false, emoteImg, 0.5f));
+
+                            StartEmoteAnim();
+                            //StartCoroutine(FadeINandOutImage(0.7f, false, emoteImg, 0.5f));
                             // Score
                             PlayerManager.instance.UpdateScore(-0.5f);
                             break;
@@ -137,16 +138,35 @@ public class MonsterController : MonoBehaviour
         }
     }
 
+    public void StartEmoteAnim()
+    {
+        CancelInvoke("FinishedEmoteAnim"); // Cancel other animation
+        CancelInvoke("FinishedAction"); // Cancel other animation
+
+        playingImgAnimation = true;
+        emoteImg.GetComponent<Animation>().Play("EmotionAnimation");
+
+        Invoke("FinishedEmoteAnim", emoteImg.GetComponent<Animation>()["EmotionAnimation"].length);
+    }
+
+
+    public void FinishedEmoteAnim()
+    {
+        playingImgAnimation = false;
+    }
+
     public void StartFinishedAction()
     {
+        CancelInvoke("FinishedEmoteAnim"); // Cancel other animation
+        CancelInvoke("FinishedAction"); // Cancel other animation
+
         emoteImg.enabled = true;
         emoteImg.sprite = star;
-        CancelInvoke("FinishedAction"); // Cancel other animation
-        StopCoroutine("FadeINandOutImage");
+
         playingImgAnimation = true;
         emoteImg.GetComponent<Animation>().Play("StarAnimation");
 
-        Invoke("FinishedAction", emoteImg.GetComponent<Animation>().clip.length);
+        Invoke("FinishedAction", emoteImg.GetComponent<Animation>()["StarAnimation"].clip.length);
     }
 
     public void FinishedAction()
