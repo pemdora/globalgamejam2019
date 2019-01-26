@@ -10,7 +10,7 @@
         LOD 200
      
 CGPROGRAM
-#pragma surface surf ToonRamp fullForwardShadows
+#pragma surface surf ToonRamp
  
 sampler2D _Ramp;
  
