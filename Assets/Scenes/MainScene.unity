@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -129,6 +129,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834474d4c5192dc459b6d327c142bf8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &163857128 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114782291040997816, guid: ba4f5479524537f4c91318c0a0d4a6c1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1340916867}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &234166496
 Prefab:
   m_ObjectHideFlags: 0
@@ -214,6 +220,29 @@ Prefab:
     - {fileID: 65091287338894932, guid: 390a0984fdb2a0440a37410abc8e5a26, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 390a0984fdb2a0440a37410abc8e5a26, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &693056870 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1876212233071630, guid: ba4f5479524537f4c91318c0a0d4a6c1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1340916867}
+--- !u!114 &693056871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 693056870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1
+--- !u!114 &693056872 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114083399528746130, guid: ba4f5479524537f4c91318c0a0d4a6c1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1340916867}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &846735459
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,6 +520,31 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224036951090873372, guid: ba4f5479524537f4c91318c0a0d4a6c1,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224036951090873372, guid: ba4f5479524537f4c91318c0a0d4a6c1,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224036951090873372, guid: ba4f5479524537f4c91318c0a0d4a6c1,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 10.0000305
+      objectReference: {fileID: 0}
+    - target: {fileID: 224036951090873372, guid: ba4f5479524537f4c91318c0a0d4a6c1,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224036951090873372, guid: ba4f5479524537f4c91318c0a0d4a6c1,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 510
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba4f5479524537f4c91318c0a0d4a6c1, type: 2}
   m_IsPrefabAsset: 0
@@ -533,6 +587,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114168737192393578, guid: 35a9cc3fd8390e8479eee79258889c19,
+        type: 2}
+      propertyPath: scoreUIPlaceHolder
+      value: 
+      objectReference: {fileID: 693056872}
+    - target: {fileID: 114168737192393578, guid: 35a9cc3fd8390e8479eee79258889c19,
+        type: 2}
+      propertyPath: scoreUI
+      value: 
+      objectReference: {fileID: 163857128}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35a9cc3fd8390e8479eee79258889c19, type: 2}
   m_IsPrefabAsset: 0

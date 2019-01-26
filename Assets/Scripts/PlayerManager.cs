@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour {
 
     public static PlayerManager instance;
 
+    public Image scoreUIPlaceHolder;
+    public Image scoreUI;
+
     private float score;
+    private float scoreMax;
 
     void Awake()
     {
@@ -26,11 +31,17 @@ public class PlayerManager : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
 
         score = 2.0f;
+        scoreMax = 5.0f;
+
+        UpdateScore(0.0f);
     }
 
     public void UpdateScore(float scoreToAdd)
     {
         score += scoreToAdd;
+        float widthMax = scoreUIPlaceHolder.rectTransform.sizeDelta.x;
+        float width = score * widthMax / scoreMax;
+        scoreUI.rectTransform.sizeDelta = new Vector2(width, scoreUI.rectTransform.sizeDelta.y);
     }
 
     public float GetScore()
