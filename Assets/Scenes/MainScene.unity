@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17365238, g: 0.21710008, b: 0.2992206, a: 1}
+  m_IndirectSpecularColor: {r: 0.17365289, g: 0.21710074, b: 0.29922125, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -197,7 +197,7 @@ Prefab:
     - target: {fileID: 20152761035355348, guid: 95d4f5522f5bdfa4db29553535405d74,
         type: 2}
       propertyPath: orthographic size
-      value: 13.19
+      value: 13.3
       objectReference: {fileID: 0}
     - target: {fileID: 4008770300469630, guid: 95d4f5522f5bdfa4db29553535405d74, type: 2}
       propertyPath: m_LocalPosition.x
@@ -207,9 +207,46 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: -3.17
       objectReference: {fileID: 0}
+    - target: {fileID: 1532929001716094, guid: 95d4f5522f5bdfa4db29553535405d74, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 20152761035355348, guid: 95d4f5522f5bdfa4db29553535405d74,
+        type: 2}
+      propertyPath: m_BackGroundColor.r
+      value: 0.28920433
+      objectReference: {fileID: 0}
+    - target: {fileID: 20152761035355348, guid: 95d4f5522f5bdfa4db29553535405d74,
+        type: 2}
+      propertyPath: m_BackGroundColor.g
+      value: 0.50749093
+      objectReference: {fileID: 0}
+    - target: {fileID: 20152761035355348, guid: 95d4f5522f5bdfa4db29553535405d74,
+        type: 2}
+      propertyPath: m_BackGroundColor.b
+      value: 0.6320754
+      objectReference: {fileID: 0}
+    - target: {fileID: 20152761035355348, guid: 95d4f5522f5bdfa4db29553535405d74,
+        type: 2}
+      propertyPath: near clip plane
+      value: -100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95d4f5522f5bdfa4db29553535405d74, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &148538304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 940177336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2f6a58150d85646a2f84616bed7029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panSpeed: 5
+  boundery: 35
 --- !u!114 &163857128 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114975989627495508, guid: 7f66243b4f2c9a647a8345e2f67898d2,
@@ -460,6 +497,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e96748541c1cdd04cb20cb3617066067, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &940177336 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1041450376021600, guid: 95d4f5522f5bdfa4db29553535405d74,
+    type: 2}
+  m_PrefabInternal: {fileID: 148538302}
 --- !u!1 &1019588063 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1295483051676714, guid: ab75427f6ae40f54aa18597bb24e4f98,
@@ -812,7 +854,7 @@ Prefab:
     - target: {fileID: 224554089541690002, guid: 6e8efd23ba5eaa54ebe6290becb261ab,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000020440524
+      value: 0.00003230799
       objectReference: {fileID: 0}
     - target: {fileID: 224188109699636738, guid: 6e8efd23ba5eaa54ebe6290becb261ab,
         type: 2}
