@@ -49,8 +49,10 @@ public class MonsterController : MonoBehaviour
         else if (doingAction)
         {
             timeLeft -= Time.deltaTime;
+            target.GetComponent<RoomObject>().occupied = true;
             if (timeLeft < 0)
             {
+                target.GetComponent<RoomObject>().occupied = false;
                 MovementManager.instance.AssignPOI(this);
             }
         }

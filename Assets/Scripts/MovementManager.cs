@@ -29,7 +29,7 @@ public class MovementManager : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
-    public void AssignPOI(MonsterController monsterC)
+    public void AssignPOI(MonsterController monsterC )
     {
         int index = Random.Range(0, freePointOfInterest.Count-1);
         GameObject newPOI = freePointOfInterest[index];
@@ -41,9 +41,7 @@ public class MovementManager : MonoBehaviour {
             index = Random.Range(0, freePointOfInterest.Count - 1);
             newPOI = freePointOfInterest[index];
         }
-
-        freePointOfInterest.Remove(newPOI); // remove new POI
-        freePointOfInterest.Add(monsterC.target); // Add former monster PO
+        
         monsterC.target = newPOI;
         monsterC.timeLeft = newPOI.GetComponent<RoomObject>().time;
 
