@@ -26,7 +26,6 @@ public class CameraController : MonoBehaviour {
             float vertical = Input.GetAxis("Mouse Y") * panSpeed;
 
             Vector3 newPos = new Vector3(Camera.main.transform.position.x + horizontal, Camera.main.transform.position.y + vertical, Camera.main.transform.position.z - horizontal);
-            //newPos = new Vector3(newPos.x - vertical, newPos.y, newPos.z + vertical);
 
             if (newPos.x < XMax && newPos.x > -XMin && newPos.y < YMax && newPos.y > -YMin)
             {
