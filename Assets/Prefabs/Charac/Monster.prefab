@@ -519,6 +519,7 @@ GameObject:
   - component: {fileID: 224087845704544676}
   - component: {fileID: 222749441072313204}
   - component: {fileID: 114568143475995552}
+  - component: {fileID: 111340679225447928}
   m_Layer: 5
   m_Name: Emote
   m_TagString: Untagged
@@ -616,7 +617,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1759149736749214}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.95, z: 0}
+  m_LocalPosition: {x: 7, y: 0.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4027809027301748}
@@ -1119,6 +1120,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &111340679225447928
+Animation:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995109896023052}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 21b004cda2ab1174a9dda1c072c0e260, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 21b004cda2ab1174a9dda1c072c0e260, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &114090648631735064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1155,6 +1171,7 @@ MonoBehaviour:
   target: {fileID: 0}
   timeLeft: 0
   emoteImg: {fileID: 114568143475995552}
+  star: {fileID: 21300000, guid: f15f725add1e22d4ea6359910cf4c75b, type: 3}
   reactionObjects:
   - obj: {fileID: 1387086991958546, guid: c3d8ed5d2e8a12d478329de989c0deb2, type: 2}
     reaction: 3
@@ -1168,13 +1185,13 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1995109896023052}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

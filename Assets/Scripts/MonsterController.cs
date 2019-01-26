@@ -15,6 +15,8 @@ public class MonsterController : MonoBehaviour
 
     [SerializeField]
     private Image emoteImg;
+    [SerializeField]
+    private Sprite star;
 
     private bool playingImgAnimation;
 
@@ -52,8 +54,10 @@ public class MonsterController : MonoBehaviour
             target.GetComponent<RoomObject>().occupied = true;
             if (timeLeft < 0)
             {
+                StartFinishedAction();
                 target.GetComponent<RoomObject>().occupied = false;
-                MovementManager.instance.AssignPOI(this);
+
+                MovementManager.instance.AssignPOI(this); // Assign POI and set doingAction to false
             }
         }
 
@@ -86,11 +90,15 @@ public class MonsterController : MonoBehaviour
                             Debug.Log("Love");
                             emoteImg.sprite = objData.emote;
                             StartCoroutine(FadeINandOutImage(0.7f, false, emoteImg, 0.5f));
+                            // Score
+                            PlayerManager.instance.UpdateScore(0.1f);
                             break;
                         case ObjectData.REACTION.Hate:
                             Debug.Log("Hate");
                             emoteImg.sprite = objData.emote;
                             StartCoroutine(FadeINandOutImage(0.7f, false, emoteImg, 0.5f));
+                            // Score
+                            PlayerManager.instance.UpdateScore(-0.5f);
                             break;
                     }
                 }
@@ -129,4 +137,23 @@ public class MonsterController : MonoBehaviour
         }
     }
 
+    public void StartFinishedAction()
+    {
+        emoteImg.enabled = true;
+        emoteImg.sprite = star;
+        CancelInvoke("FinishedAction"); // Cancel other animation
+        StopCoroutine("FadeINandOutImage");
+        playingImgAnimation = true;
+        emoteImg.GetComponent<Animation>().Play("StarAnimation");
+
+        Invoke("FinishedAction", emoteImg.GetComponent<Animation>().clip.length);
+    }
+
+    public void FinishedAction()
+    {
+        Debug.Log("Finished");
+        playingImgAnimation = false;
+        PlayerManager.instance.UpdateScore(0.2f);
+        CancelInvoke("FinishedAction");
+    }
 }
