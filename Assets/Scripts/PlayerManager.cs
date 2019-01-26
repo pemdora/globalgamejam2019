@@ -30,7 +30,7 @@ public class PlayerManager : MonoBehaviour {
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
 
-        score = 2.0f;
+        score = 2.6f;
         scoreMax = 5.0f;
 
         UpdateScore(0.0f);
