@@ -26,6 +26,10 @@ public class PlayerManager : MonoBehaviour
     [Header("Day param")]
     public float dayLength;
 
+    private Animation theAnimEndOfTheDay;
+    [SerializeField]
+    private GameObject panel_End_Of_TheDAy;
+
     void Awake()
     {
         //Check if instance already exists
@@ -33,13 +37,14 @@ public class PlayerManager : MonoBehaviour
         {
             //if not, set instance to this
             instance = this;
+            theAnimEndOfTheDay = panel_End_Of_TheDAy.GetComponent<Animation>();
         }
         //If instance already exists and it's not this:
         else if (instance != this)
 
             //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
             Destroy(gameObject);
-        
+
 
         score = 2.5f;
         scoreMax = 5.0f;
@@ -69,7 +74,7 @@ public class PlayerManager : MonoBehaviour
         if (timeLeft < 0 && !finishedDay)
         {
             finishedDay = true;
-            MenuManager.instance.PauseGame();
+            StartAnim();
         }
     }
 
@@ -127,5 +132,45 @@ public class PlayerManager : MonoBehaviour
         }
         Destroy(coinIcon);
 
+    }
+
+
+    public void StartAnim()
+    {
+
+        panel_End_Of_TheDAy.SetActive(true);
+        CancelInvoke("FinishAnim");
+        theAnimEndOfTheDay["EndOfTheDay"].speed = 1f;
+
+        theAnimEndOfTheDay.Play("EndOfTheDay");
+        Invoke("PauseGame", theAnimEndOfTheDay["EndOfTheDay"].length);
+        //Invoke("FinishAnim", theAnimEndOfTheDay["EndOfTheDay"].length);
+    }
+
+    public void PauseGame()
+    {
+        MenuManager.instance.PauseGame();
+    }
+
+    public void MainMenu()
+    {
+        MenuManager.instance.UnpauseGame();
+        MenuManager.instance.LoadMainMenu();
+    }
+
+    public void FinishAnim()
+    {
+        //MenuManager.instance.PauseGame();
+        CancelInvoke("FinishAnim");
+        theAnimEndOfTheDay["EndOfTheDay"].time = theAnimEndOfTheDay["EndOfTheDay"].length;
+        theAnimEndOfTheDay["EndOfTheDay"].speed = -1f;
+
+        theAnimEndOfTheDay.Play("EndOfTheDay");
+        Invoke("SwitchOff", (theAnimEndOfTheDay["EndOfTheDay"].length + 0.5f));
+    }
+
+    private void SwitchOff()
+    {
+        gameObject.SetActive(false);
     }
 }

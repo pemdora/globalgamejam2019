@@ -35,6 +35,11 @@ public class MenuManager : MonoBehaviour {
         Application.Quit();
     }
 
+    public void LoadMainMenu()
+    {
+        this.transform.Find("Canvas").Find("MainMenu").gameObject.SetActive(true);
+        SceneManager.LoadScene("MainMenu");
+    }
 
     public void PauseGame()
     {

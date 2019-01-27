@@ -58,3 +58,4 @@ MonoBehaviour:
   coinIcon: {fileID: 114279493598886144, guid: 9c7d20ffe5ed5f54bb618946eb0d134e, type: 2}
   _slider: {fileID: 0}
   dayLength: 1
+  panel_End_Of_TheDAy: {fileID: 0}
