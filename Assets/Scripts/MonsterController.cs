@@ -126,7 +126,7 @@ public class MonsterController : MonoBehaviour
                 timeLeft -= Time.deltaTime;
                 if (timeLeft < 0)
                 {
-                    StartFinishedAction();
+                    //StartFinishedAction();
                     target.GetComponent<RoomObject>().occupied = false;
 
                     LevelManager.instance.AssignPOI(this); // Assign POI and set doingAction to false
@@ -201,6 +201,10 @@ public class MonsterController : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            //Debug.Log("cannot react");
+        }
     }
 
     private void BlockReaction()
@@ -257,6 +261,7 @@ public class MonsterController : MonoBehaviour
         animator.SetBool("walking", true);
     }
 
+    // Not used anymore
     public void StartFinishedAction()
     {
         CancelInvoke("FinishedEmoteAnim"); // Cancel other animation
@@ -271,6 +276,7 @@ public class MonsterController : MonoBehaviour
         Invoke("FinishedAction", emoteImg.GetComponent<Animation>()["StarAnimation"].clip.length);
     }
 
+    // Not used anymore
     public void FinishedAction()
     {
         playingImgAnimation = false;
