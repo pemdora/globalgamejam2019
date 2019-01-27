@@ -31,7 +31,7 @@ public class CameraController : MonoBehaviour {
         {
             Camera.main.orthographicSize = Mathf.Min(Camera.main.orthographicSize + 1, 14);
         }
-        if (Camera.main.orthographicSize < 13 && Input.GetMouseButton(1))
+        if (Camera.main.orthographicSize < 14 && Input.GetMouseButton(1))
         {
             float horizontal = Input.GetAxis("Mouse X") * panSpeed;
             float vertical = Input.GetAxis("Mouse Y") * panSpeed;
