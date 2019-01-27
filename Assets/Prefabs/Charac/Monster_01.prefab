@@ -462,7 +462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4218925008405190}
   - component: {fileID: 212490007193975780}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vision_sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -704,7 +704,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1656426999238732}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.94, y: 0, z: 11.8}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4849640069628168}
@@ -1514,7 +1514,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5.98
+  m_Speed: 6
   m_Acceleration: 10.6
   avoidancePriority: 50
   m_AngularSpeed: 166.3
@@ -1541,7 +1541,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b3efb4c5138eb0d4395aa78cdba34696, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
