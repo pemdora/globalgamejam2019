@@ -36,6 +36,8 @@ public class MonsterController : MonoBehaviour
     private Sprite portrait;
     [SerializeField]
     private string description;
+    [SerializeField]
+    private float _pitch;
 
     [Header("[Animation Length for Happy/Angry]")]
     [SerializeField]
@@ -125,7 +127,7 @@ public class MonsterController : MonoBehaviour
                     emoteImg.sprite = annoyed;
                     StartEmotionAnim();
                     StartCoroutine(ChangeAnimationAndAssignTarget("angry", false, angryAnimationLenght));
-                    this.GetComponent<SFXSound>().PlayTheSound(1, 1f); //annoyed
+                    this.GetComponent<SFXSound>().PlayTheSound(1, _pitch); //annoyed
                     // monster is angry 
                 }
                 // room is free, monster will occupy the room
@@ -200,14 +202,14 @@ public class MonsterController : MonoBehaviour
                             // Score
                             animator.SetBool("happy", true);
                             StartCoroutine(ChangeAnimationAndAssignTarget("happy", false, angryAnimationLenght));
-                            this.GetComponent<SFXSound>().PlayTheSound(0, 1f); //angry
+                            this.GetComponent<SFXSound>().PlayTheSound(0, _pitch); //angry
 
                             PlayerManager.instance.UpdateScore(objData.satisfactionScore);
                             PlayerManager.instance.EarnMoney(1, this.transform.position);
                             break;
                         case ObjectData.REACTION.Hate:
                             emoteImg.sprite = objData.emote;
-                            this.GetComponent<SFXSound>().PlayTheSound(2,1f); //angry
+                            this.GetComponent<SFXSound>().PlayTheSound(2, _pitch); //angry
 
                             animator.SetBool("angry", true);
                             StartCoroutine(ChangeAnimationAndAssignTarget("angry", false, angryAnimationLenght));
