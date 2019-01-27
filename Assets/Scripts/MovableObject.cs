@@ -37,11 +37,11 @@ public class MovableObject : MonoBehaviour {
 
             if (Input.GetKey(KeyCode.E))
             {
-                transform.Rotate(new Vector3(0, -1.5f, 0));
+                transform.Rotate(new Vector3(0, -1.1f, 0));
             }
             if (Input.GetKey(KeyCode.R))
             {
-                transform.Rotate(new Vector3(0, 1.5f, 0));
+                transform.Rotate(new Vector3(0, 1.1f, 0));
             }
         }
         else if(blockDrag)
