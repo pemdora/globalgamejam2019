@@ -40,6 +40,8 @@ GameObject:
   - component: {fileID: 33434250938830446}
   - component: {fileID: 23365086705397114}
   - component: {fileID: 95325560275232402}
+  - component: {fileID: 65545017163403012}
+  - component: {fileID: 54524187301910522}
   m_Layer: 0
   m_Name: Aquarium
   m_TagString: Untagged
@@ -333,6 +335,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1651752759822000}
   m_Mesh: {fileID: 4300006, guid: 4a646a3cfcebd6d4f93d8839d4351c8f, type: 3}
+--- !u!54 &54524187301910522
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1275831981969352}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &65545017163403012
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1275831981969352}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.2959031, z: 1}
+  m_Center: {x: 0, y: 0.64795154, z: 0}
 --- !u!95 &95325560275232402
 Animator:
   serializedVersion: 3

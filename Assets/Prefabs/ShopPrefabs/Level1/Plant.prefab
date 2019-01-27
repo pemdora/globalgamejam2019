@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33305281042792182}
   - component: {fileID: 23090736556215048}
   - component: {fileID: 114160445465694464}
-  - component: {fileID: 64575466696086880}
   - component: {fileID: 54674285835161230}
+  - component: {fileID: 65134301141792136}
   m_Layer: 0
   m_Name: Plant
   m_TagString: Untagged
@@ -174,8 +174,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64575466696086880
-MeshCollider:
+--- !u!65 &65134301141792136
+BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -183,11 +183,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300028, guid: 10b85544c3550f940841f5a9a4f52989, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 1.0601655, y: 3.0467813, z: 1.0267804}
+  m_Center: {x: -0.013988078, y: 1.5233907, z: -0.022587657}
 --- !u!114 &114160445465694464
 MonoBehaviour:
   m_ObjectHideFlags: 1

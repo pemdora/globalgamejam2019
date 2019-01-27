@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33425565925075622}
   - component: {fileID: 23652663702853410}
   - component: {fileID: 114063431162363886}
-  - component: {fileID: 64844046046274332}
   - component: {fileID: 54149185649337730}
+  - component: {fileID: 65403917781287704}
   m_Layer: 0
   m_Name: Couch
   m_TagString: Untagged
@@ -68,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1666436331999496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.26, y: 0, z: 7.75}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2762007, y: 1.2762, z: 1.2762007}
   m_Children:
   - {fileID: 4187346037456046}
@@ -174,8 +174,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64844046046274332
-MeshCollider:
+--- !u!65 &65403917781287704
+BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -183,11 +183,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300032, guid: 10b85544c3550f940841f5a9a4f52989, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 3.499611, y: 1.8273927, z: 1.7498055}
+  m_Center: {x: -0.18914661, y: 0.9175845, z: -0.3817453}
 --- !u!114 &114063431162363886
 MonoBehaviour:
   m_ObjectHideFlags: 1
