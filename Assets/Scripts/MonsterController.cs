@@ -20,7 +20,7 @@ public class MonsterController : MonoBehaviour
     [SerializeField]
     private Image emoteImg;
     [SerializeField]
-    private Sprite star;
+    private Sprite annoyed;
 
     private Animator animator;
     private bool playingImgAnimation;
@@ -110,14 +110,17 @@ public class MonsterController : MonoBehaviour
 
                     PlayerManager.instance.UpdateScore(waitingPenalty);
                     animator.SetBool("angry", true);
-                    emoteImg.sprite = reactionObjects.Find(x => x.reaction == ObjectData.REACTION.Hate).emote;
-                    StartEmoteAnim();
+                    emoteImg.sprite = annoyed;
+                    StartEmotionAnim();
                     StartCoroutine(ChangeAnimationAndAssignTarget("angry", false, angryAnimationLenght));
                     // monster is angry 
                 }
                 // room is free, monster will occupy the room
                 else
                 {
+                    emoteImg.sprite = target.GetComponent<RoomObject>().spr;
+                    StartRoomEmote();
+
                     target.GetComponent<RoomObject>().occupied = true;
                     actionchosen = true;
                     occupyplace = true;
@@ -128,7 +131,7 @@ public class MonsterController : MonoBehaviour
                 timeLeft -= Time.deltaTime;
                 if (timeLeft < 0)
                 {
-                    //StartFinishedAction();
+                    FinishedAction();
                     target.GetComponent<RoomObject>().occupied = false;
 
                     LevelManager.instance.AssignPOI(this); // Assign POI and set doingAction to false
@@ -179,7 +182,7 @@ public class MonsterController : MonoBehaviour
                     {
                         case ObjectData.REACTION.Love:
                             emoteImg.sprite = objData.emote;
-                            StartEmoteAnim();
+                            StartEmotionAnim();
                             //StartCoroutine(FadeINandOutImage(0.7f, false, emoteImg, 0.5f));
                             // Score
                             animator.SetBool("happy", true);
@@ -194,7 +197,7 @@ public class MonsterController : MonoBehaviour
                             animator.SetBool("angry", true);
                             StartCoroutine(ChangeAnimationAndAssignTarget("angry", false, angryAnimationLenght));
 
-                            StartEmoteAnim();
+                            StartEmotionAnim();
                             //StartCoroutine(FadeINandOutImage(0.7f, false, emoteImg, 0.5f));
                             // Score
                             PlayerManager.instance.UpdateScore(objData.satisfactionScore);
@@ -245,8 +248,9 @@ public class MonsterController : MonoBehaviour
             StartCoroutine(FadeINandOutImage(alpha, true, img, speed));
         }
     }
-
-    public void StartEmoteAnim()
+    
+    // Happy or angry animation
+    public void StartEmotionAnim()
     {
         animator.SetBool("walking", false);
         CancelInvoke("FinishedEmoteAnim"); // Cancel other animation
@@ -264,26 +268,36 @@ public class MonsterController : MonoBehaviour
     }
 
     // Not used anymore
-    public void StartFinishedAction()
+    public void StartRoomEmote()
     {
         CancelInvoke("FinishedEmoteAnim"); // Cancel other animation
         CancelInvoke("FinishedAction"); // Cancel other animation
 
         emoteImg.enabled = true;
-        emoteImg.sprite = star;
 
         playingImgAnimation = true;
-        emoteImg.GetComponent<Animation>().Play("StarAnimation");
 
-        Invoke("FinishedAction", emoteImg.GetComponent<Animation>()["StarAnimation"].clip.length);
+        Animation anim = emoteImg.GetComponent<Animation>();
+        anim.Play("ActionAnimation");
+        anim["ActionAnimation"].time = 0f;
+        anim["ActionAnimation"].speed = 1f;
+
+        anim.Play("ActionAnimation");
+
+        //Invoke("FinishedAction", emoteImg.GetComponent<Animation>()["StarAnimation"].clip.length);
     }
 
     // Not used anymore
     public void FinishedAction()
     {
         playingImgAnimation = false;
-        PlayerManager.instance.UpdateScore(0.2f);
         CancelInvoke("FinishedAction");
+
+        Animation anim = emoteImg.GetComponent<Animation>();
+        anim["ActionAnimation"].time = anim["ActionAnimation"].length;
+        anim["ActionAnimation"].speed = -1f;
+
+        anim.Play("ActionAnimation");
     }
     
 }

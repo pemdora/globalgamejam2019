@@ -6,6 +6,7 @@ public class RoomObject : MonoBehaviour {
     public float time;
     [HideInInspector]
     public bool occupied;
+    public Sprite spr;
 
     private void Start()
     {

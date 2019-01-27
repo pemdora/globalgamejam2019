@@ -1446,7 +1446,7 @@ MonoBehaviour:
   target: {fileID: 0}
   timeLeft: 0
   emoteImg: {fileID: 114161845207465804}
-  star: {fileID: 21300000, guid: f15f725add1e22d4ea6359910cf4c75b, type: 3}
+  annoyed: {fileID: 21300000, guid: 11ade3fb5e89bc34fb8b5c45983f1b3e, type: 3}
   angryAnimationLenght: 2
   happyAnimationLenght: 2
   waitingPenalty: -0.2
@@ -1454,11 +1454,11 @@ MonoBehaviour:
   reactionObjects:
   - obj: {fileID: 1666436331999496, guid: 4cdd5e32aac6f5441b25253168ccbac9, type: 2}
     reaction: 0
-    emote: {fileID: 21300000, guid: fbd9a822e54bc67488dfe27e74eeba00, type: 3}
+    emote: {fileID: 21300000, guid: e1f0040abf9e198419bc8faadd51bd52, type: 3}
     satisfactionScore: 0.1
   - obj: {fileID: 1217889276318340, guid: bc116f96198a5c54a92b1bcdf9282c9c, type: 2}
     reaction: 3
-    emote: {fileID: 21300000, guid: e0f1eda761bf3db45880aa444442160e, type: 3}
+    emote: {fileID: 21300000, guid: 1eb72d89016b5d446bb333845cf766b7, type: 3}
     satisfactionScore: -0.5
 --- !u!114 &114161845207465804
 MonoBehaviour:
@@ -1479,9 +1479,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 03a126cad0910824189f1e8903999acb, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1882,7 +1882,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 3.11}
-  m_SizeDelta: {x: 2, y: 2}
+  m_SizeDelta: {x: 2.4, y: 2.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224443126708143600
 RectTransform:

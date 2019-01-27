@@ -37,6 +37,8 @@ public class PlayerManager : MonoBehaviour
     public float dayLength;
     public float scoreStart;
     public int moneyStart;
+    public int maxDay;
+    private int dayCounter;
 
     void Awake()
     {
@@ -47,6 +49,7 @@ public class PlayerManager : MonoBehaviour
             instance = this;
             theAnimEndOfTheDay = panel_End_Of_TheDAy.GetComponent<Animation>();
             gameOverAnim = panel_GameOver.GetComponent<Animation>();
+            dayCounter = 0;
         }
         //If instance already exists and it's not this:
         else if (instance != this)
@@ -89,16 +92,31 @@ public class PlayerManager : MonoBehaviour
         {
             timeLeft -= Time.deltaTime;
             _slider.value = dayLength - timeLeft;
-            if (timeLeft < 0 && !finishedDay)
+            if (timeLeft <= 0 && !finishedDay)
             {
+                dayCounter++;
+                panel_End_Of_TheDAy.transform.Find("Day").GetComponent<TextMeshProUGUI>().text = this.dayCounter.ToString() + "/" + this.maxDay;
                 finishedDay = true;
-                StartAnimEndDay();
                 panel_End_Of_TheDAy.transform.Find("Score").GetComponent<TextMeshProUGUI>().text = this.score.ToString();
                 int moneyEarned = (int)Mathf.Floor(this.score) * 10;
-                panel_End_Of_TheDAy.transform.Find("Money").GetComponent<TextMeshProUGUI>().text = this.money + "+ (" + moneyEarned.ToString() +")";
-                this.money+=moneyEarned;
+                this.money += moneyEarned;
+                panel_End_Of_TheDAy.transform.Find("Money").GetComponent<TextMeshProUGUI>().text = (this.money-moneyEarned) + "+ (" + moneyEarned.ToString() + ")";
+                StartAnimEndDay();
+
+                if (dayCounter>= maxDay)
+                {
+                    panel_End_Of_TheDAy.transform.Find("ButtonNext").gameObject.SetActive(false);
+                }
             }
         }
+    }
+
+    public void NextDay()
+    {
+        MenuManager.instance.UnpauseGame();
+        FinishAnimEndDay();
+        ResetSlider();
+        finishedDay = false;
     }
 
     public void UpdateScore(float scoreToAdd)
@@ -178,7 +196,6 @@ public class PlayerManager : MonoBehaviour
         theAnimEndOfTheDay["EndOfTheDay"].speed = -1f;
 
         theAnimEndOfTheDay.Play("EndOfTheDay");
-        Invoke("SwitchOff", (theAnimEndOfTheDay["EndOfTheDay"].length + 0.5f));
     }
 
 
