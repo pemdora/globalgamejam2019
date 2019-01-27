@@ -15,6 +15,7 @@ public class MonsterController : MonoBehaviour
     [HideInInspector]
     public float timeLeft; // timeleft to finish action
 
+
     private Transform vision;
 
     [SerializeField]
@@ -24,6 +25,17 @@ public class MonsterController : MonoBehaviour
 
     private Animator animator;
     private bool playingImgAnimation;
+
+    [SerializeField]
+    private GameObject panel_Character;
+
+    [Header("[Caractéristique]")]
+    [SerializeField]
+    private string namemonster;
+    [SerializeField]
+    private Sprite portrait;
+    [SerializeField]
+    private string description;
 
     [Header("[Animation Length for Happy/Angry]")]
     [SerializeField]
@@ -299,5 +311,17 @@ public class MonsterController : MonoBehaviour
 
         anim.Play("ActionAnimation");
     }
+
     
+    public void OpenCharacterCharac()
+    {
+        panel_Character.transform.Find("Name").GetComponent<Text>().text = namemonster;
+        panel_Character.transform.Find("Portrait").GetComponent<Image>().sprite = portrait;
+        panel_Character.transform.Find("Description").GetComponent<Text>().text = description;
+        if(target!=null)
+            panel_Character.transform.Find("Target").GetComponent<Image>().sprite = target.GetComponent<RoomObject>().spr;
+        panel_Character.SetActive(true);
+    }
+
+
 }

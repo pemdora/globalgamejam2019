@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
 
+    public static int level;
+
     public static MenuManager instance;
 
     void Awake()
@@ -23,7 +25,12 @@ public class MenuManager : MonoBehaviour {
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
     }
-    
+
+    public void LoadLevel(string scene, int _level)
+    {
+        SceneManager.LoadScene(scene);
+        level = _level;
+    }
 
     public void LoadScene(string scene)
     {

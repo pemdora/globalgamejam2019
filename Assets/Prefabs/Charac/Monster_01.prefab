@@ -158,6 +158,7 @@ GameObject:
   - component: {fileID: 95027630814611332}
   - component: {fileID: 136931372279856616}
   - component: {fileID: 136639147748997856}
+  - component: {fileID: 114705926755948954}
   m_Layer: 0
   m_Name: Monster01
   m_TagString: Untagged
@@ -1234,6 +1235,10 @@ MonoBehaviour:
   timeLeft: 0
   emoteImg: {fileID: 114187738600852702}
   annoyed: {fileID: 21300000, guid: 11ade3fb5e89bc34fb8b5c45983f1b3e, type: 3}
+  panel_Character: {fileID: 0}
+  namemonster: Lulu
+  portrait: {fileID: 21300000, guid: 44efc24e47c464a4e90dd4d2cab118c3, type: 3}
+  description: like hobbies, dislike confortable things
   angryAnimationLenght: 2
   happyAnimationLenght: 2
   waitingPenalty: -0.2
@@ -1258,6 +1263,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834474d4c5192dc459b6d327c142bf8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114705926755948954
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1311269509730914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3397a89bfa231c3499ee92aed642aeaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 114238936299026198}
 --- !u!114 &114763323965597608
 MonoBehaviour:
   m_ObjectHideFlags: 1

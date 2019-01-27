@@ -628,6 +628,7 @@ GameObject:
   - component: {fileID: 95062401962602742}
   - component: {fileID: 136896261520599180}
   - component: {fileID: 136220586349792952}
+  - component: {fileID: 114747912740749588}
   m_Layer: 0
   m_Name: Monster03
   m_TagString: Untagged
@@ -1447,8 +1448,12 @@ MonoBehaviour:
   timeLeft: 0
   emoteImg: {fileID: 114161845207465804}
   annoyed: {fileID: 21300000, guid: 11ade3fb5e89bc34fb8b5c45983f1b3e, type: 3}
-  angryAnimationLenght: 2
-  happyAnimationLenght: 2
+  panel_Character: {fileID: 0}
+  namemonster: "L\xE9ontine"
+  portrait: {fileID: 21300000, guid: 794ee42aee40f124caf2990adeead0f7, type: 3}
+  description: like decoration, dislike hobbies
+  angryAnimationLenght: 4
+  happyAnimationLenght: 4
   waitingPenalty: -0.2
   canReactDelay: 5
   reactionObjects:
@@ -1503,6 +1508,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114747912740749588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1914869409223242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3397a89bfa231c3499ee92aed642aeaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 114122955444368466}
 --- !u!114 &114857721648154204
 MonoBehaviour:
   m_ObjectHideFlags: 1
