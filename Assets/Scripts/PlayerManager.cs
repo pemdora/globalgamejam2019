@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
-
     public static PlayerManager instance;
     public Canvas mainCanvas;
 
@@ -19,6 +18,13 @@ public class PlayerManager : MonoBehaviour
     private float scoreMax;
 
     private int money;
+
+    [SerializeField]
+    private Slider _slider;
+    private float timeLeft;
+    private bool finishedDay;
+    [Header("Day param")]
+    public float dayLength;
 
     void Awake()
     {
@@ -35,12 +41,36 @@ public class PlayerManager : MonoBehaviour
             Destroy(gameObject);
         
 
-        score = 2.6f;
+        score = 2.5f;
         scoreMax = 5.0f;
         UpdateScore(0.0f);
 
         money = 100;
         UpdateMoney(0);
+    }
+
+    void Start()
+    {
+        ResetSlider();
+        finishedDay = false;
+    }
+
+    public void ResetSlider()
+    {
+        _slider.minValue = 0f;
+        _slider.maxValue = dayLength;
+        timeLeft = dayLength;
+    }
+
+    void Update()
+    {
+        timeLeft -= Time.deltaTime;
+        _slider.value = dayLength - timeLeft;
+        if (timeLeft < 0 && !finishedDay)
+        {
+            finishedDay = true;
+            MenuManager.instance.PauseGame();
+        }
     }
 
     public void UpdateScore(float scoreToAdd)

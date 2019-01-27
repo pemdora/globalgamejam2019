@@ -124,3 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d9edca06ace77e47b34881b9a941464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delay: 5
+  isDragged: 0

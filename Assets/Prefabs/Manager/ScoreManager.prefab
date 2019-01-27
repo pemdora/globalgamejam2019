@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1434064526584814}
+  m_RootGameObject: {fileID: 1167831776523000}
   m_IsPrefabAsset: 1
---- !u!1 &1434064526584814
+--- !u!1 &1167831776523000
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4421131274771418}
-  - component: {fileID: 114168737192393578}
+  - component: {fileID: 4073110632760300}
+  - component: {fileID: 114447502321563114}
   m_Layer: 0
-  m_Name: Player
+  m_Name: ScoreManager
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4421131274771418
+--- !u!4 &4073110632760300
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1434064526584814}
+  m_GameObject: {fileID: 1167831776523000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,12 +40,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114168737192393578
+--- !u!114 &114447502321563114
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1434064526584814}
+  m_GameObject: {fileID: 1167831776523000}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18fc78ca9ac1c394493c3698899cbccc, type: 3}
@@ -56,3 +56,5 @@ MonoBehaviour:
   scoreUI: {fileID: 0}
   moneyUI: {fileID: 0}
   coinIcon: {fileID: 114279493598886144, guid: 9c7d20ffe5ed5f54bb618946eb0d134e, type: 2}
+  _slider: {fileID: 0}
+  dayLength: 1

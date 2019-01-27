@@ -1449,7 +1449,7 @@ MonoBehaviour:
   star: {fileID: 21300000, guid: f15f725add1e22d4ea6359910cf4c75b, type: 3}
   angryAnimationLenght: 2
   happyAnimationLenght: 2
-  waitingPenalty: -0.5
+  waitingPenalty: -0.2
   canReactDelay: 2
   reactionObjects:
   - obj: {fileID: 1666436331999496, guid: 4cdd5e32aac6f5441b25253168ccbac9, type: 2}

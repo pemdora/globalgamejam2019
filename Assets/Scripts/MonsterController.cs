@@ -285,4 +285,5 @@ public class MonsterController : MonoBehaviour
         PlayerManager.instance.UpdateScore(0.2f);
         CancelInvoke("FinishedAction");
     }
+    
 }
