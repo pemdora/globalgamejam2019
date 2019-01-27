@@ -37,11 +37,12 @@ public class MusicManager : MonoBehaviour {
 	}
 
 	public void SwapMusic(int music){
-		//fade out current+fade in new music
+        /*
+		//fade out current+fade in new music=
 		fadeOut();
 		GetComponent<AudioSource>().clip = musicList[music];
 		GetComponent<AudioSource>().Play();
-		fadeIn();
+		fadeIn();*/
 	}
 
 

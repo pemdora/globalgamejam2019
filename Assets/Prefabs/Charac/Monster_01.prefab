@@ -1334,6 +1334,7 @@ MonoBehaviour:
   emoteImg: {fileID: 114187738600852702}
   annoyed: {fileID: 21300000, guid: 11ade3fb5e89bc34fb8b5c45983f1b3e, type: 3}
   panel_Character: {fileID: 0}
+  _pitch: 1.2
   namemonster: Lulu
   portrait: {fileID: 21300000, guid: 44efc24e47c464a4e90dd4d2cab118c3, type: 3}
   descriptionLove: hobbies
@@ -1413,7 +1414,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a7fae229fe62064b8572eae6f72373a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theSound: []
+  theSound:
+  - {fileID: 8300000, guid: 2c432755b436d7d43bf0ed7a4111a9bb, type: 3}
+  - {fileID: 8300000, guid: 8d43d6ffb55e71248aa98cc7aa1c08bb, type: 3}
+  - {fileID: 8300000, guid: e2177c9501658544f957689398b35e42, type: 3}
 --- !u!136 &136639147748997856
 CapsuleCollider:
   m_ObjectHideFlags: 1

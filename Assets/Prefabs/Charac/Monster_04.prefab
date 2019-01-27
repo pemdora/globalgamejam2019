@@ -1690,7 +1690,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a7fae229fe62064b8572eae6f72373a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theSound: []
+  theSound:
+  - {fileID: 8300000, guid: 2c432755b436d7d43bf0ed7a4111a9bb, type: 3}
+  - {fileID: 8300000, guid: 8d43d6ffb55e71248aa98cc7aa1c08bb, type: 3}
+  - {fileID: 8300000, guid: e2177c9501658544f957689398b35e42, type: 3}
 --- !u!114 &114587747945716848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1742,6 +1745,7 @@ MonoBehaviour:
   emoteImg: {fileID: 114068756352267340}
   annoyed: {fileID: 21300000, guid: 11ade3fb5e89bc34fb8b5c45983f1b3e, type: 3}
   panel_Character: {fileID: 0}
+  _pitch: 1.5
   namemonster: Archibald
   portrait: {fileID: 21300000, guid: eea54169dd0a7bf4ba5a066060e12680, type: 3}
   descriptionLove: decoration
