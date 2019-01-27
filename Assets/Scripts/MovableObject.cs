@@ -11,14 +11,17 @@ public class MovableObject : MonoBehaviour {
 
     private Vector3 screenSpace;
     private Vector3 offset;
-    private bool isDragged;
+    [HideInInspector]
+    public bool isDragged;
     private GameObject canvas;
 
     private RaycastHit hit;
     private Ray ray;
-    
-	// Update is called once per frame
-	void Update () {
+    private TextMeshProUGUI textMeshPro;
+    private BoxCollider boxCollider;
+
+    // Update is called once per frame
+    void Update () {
 
         if (isDragged && !blockDrag)
         {
@@ -32,17 +35,15 @@ public class MovableObject : MonoBehaviour {
                 transform.position = temp;
             }
         }
-        else
+        else if(blockDrag)
         {
             timeLeft -= Time.deltaTime;
-            canvas.GetComponent<TextMeshPro>().text = timeLeft.ToString();
+            textMeshPro.text = Mathf.Round(timeLeft).ToString();
             if (timeLeft < 0)
             {
                 blockDrag = false;
-            }
-            else
-            {
-                blockDrag = true;
+                timeLeft = delay;
+                textMeshPro.text = "";
             }
         }
     }
@@ -51,17 +52,23 @@ public class MovableObject : MonoBehaviour {
     private void OnMouseDown()
     {
         isDragged = true;
+        this.gameObject.tag = "Untagged";// don't want to be triggered when dragged
     }
 
     private void OnMouseUp()
     {
         isDragged = false;
+        blockDrag = true;
+        this.gameObject.tag = "Movable"; 
     }
 
     public void SetCanvas(GameObject _canvas)
     {
         canvas = _canvas;
         timeLeft = delay;
+        textMeshPro = canvas.GetComponentInChildren<TextMeshProUGUI>();
+        boxCollider = this.GetComponent<BoxCollider>();
+        //boxCollider.isTrigger = true;
     }
 
 }

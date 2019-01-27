@@ -167,7 +167,7 @@ public class MonsterController : MonoBehaviour
     // Move to a gameobject
     public void ReactToObject(GameObject _obj)
     {
-        if (!playingImgAnimation && !occupyplace && !actionchosen && canReact) // if the monster is not occupied by something else
+        if (!playingImgAnimation && !occupyplace && !actionchosen && canReact ) // if the monster is not occupied by something else
         {
             canReact = false;
             Invoke("BlockReaction", canReactDelay);
