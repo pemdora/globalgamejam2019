@@ -369,9 +369,6 @@ GameObject:
   - component: {fileID: 4372687972389684}
   - component: {fileID: 195725467033423896}
   - component: {fileID: 114238936299026198}
-  - component: {fileID: 82141905929645138}
-  - component: {fileID: 114974129856754470}
-  - component: {fileID: 114187217391323378}
   m_Layer: 9
   m_Name: Monster_01
   m_TagString: Monster
@@ -1139,101 +1136,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 972d5185a3e3a9140affe48ae0aac255, type: 3}
---- !u!82 &82141905929645138
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1656426999238732}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!95 &95027630814611332
 Animator:
   serializedVersion: 3
@@ -1289,21 +1191,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114187217391323378
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1656426999238732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a7fae229fe62064b8572eae6f72373a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  theSound:
-  - {fileID: 8300000, guid: 2c432755b436d7d43bf0ed7a4111a9bb, type: 3}
-  - {fileID: 8300000, guid: 8d43d6ffb55e71248aa98cc7aa1c08bb, type: 3}
-  - {fileID: 8300000, guid: e2177c9501658544f957689398b35e42, type: 3}
 --- !u!114 &114187738600852702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1352,7 +1239,6 @@ MonoBehaviour:
   namemonster: Lulu
   portrait: {fileID: 21300000, guid: 44efc24e47c464a4e90dd4d2cab118c3, type: 3}
   description: like hobbies, dislike confortable things
-  _pitch: 1.5
   angryAnimationLenght: 2
   happyAnimationLenght: 2
   waitingPenalty: -0.2
@@ -1405,18 +1291,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114974129856754470
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1656426999238732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99ed6d5428cb2c94d9c90f576b4c5f4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundGroup: 1
 --- !u!136 &136639147748997856
 CapsuleCollider:
   m_ObjectHideFlags: 1
