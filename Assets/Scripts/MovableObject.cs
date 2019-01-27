@@ -34,6 +34,15 @@ public class MovableObject : MonoBehaviour {
                 Vector3 temp = ray.GetPoint(distance);
                 transform.position = temp;
             }
+
+            if (Input.GetKey(KeyCode.E))
+            {
+                transform.Rotate(new Vector3(0, -1.5f, 0));
+            }
+            if (Input.GetKey(KeyCode.R))
+            {
+                transform.Rotate(new Vector3(0, 1.5f, 0));
+            }
         }
         else if(blockDrag)
         {
@@ -47,7 +56,7 @@ public class MovableObject : MonoBehaviour {
             }
         }
     }
-    
+
     //Script to drag an object in world space using the mouse
     private void OnMouseDown()
     {
