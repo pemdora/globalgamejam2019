@@ -49,7 +49,7 @@ public class ShopScrollList : MonoBehaviour {
         {
             PlayerManager.instance.UpdateMoney(-item.price);
             LevelManager.instance.SpawnObject(item.name);
-            Debug.Log("buy : " + item.name);
+            //Debug.Log("buy : " + item.name);
         }
     }
     

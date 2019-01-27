@@ -60,6 +60,6 @@ MonoBehaviour:
   panel_End_Of_TheDAy: {fileID: 0}
   panel_GameOver: {fileID: 0}
   dayLength: 120
-  scoreStart: 2.5
+  scoreStart: 5
   moneyStart: 100
   maxDay: 2

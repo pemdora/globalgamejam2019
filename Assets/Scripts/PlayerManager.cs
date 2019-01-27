@@ -224,6 +224,7 @@ public class PlayerManager : MonoBehaviour
 
     public void ReloadScene(string scene)
     {
+        MenuManager.instance.UnpauseGame();
         MenuManager.instance.LoadScene(scene);
     }
 
