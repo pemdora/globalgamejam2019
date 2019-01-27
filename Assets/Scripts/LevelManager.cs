@@ -9,10 +9,12 @@ public class LevelManager : MonoBehaviour
     private GameObject roomObjects;
     private List<GameObject> freePointOfInterest;
     [SerializeField]
-    private List<GameObject> shopableObjects;
-    [SerializeField]
     private Transform movableObjectsParent;
     private List<Transform> spawnPoints;
+
+    [Header("[List of shopable Objects]")]
+    [SerializeField]
+    private List<GameObject> shopableObjects;
 
     public static LevelManager instance;
 
@@ -43,9 +45,7 @@ public class LevelManager : MonoBehaviour
         else if (instance != this)
             //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
             Destroy(gameObject);
-
-        //Sets this to not be destroyed when reloading scene
-        DontDestroyOnLoad(gameObject);
+        
     }
 
     public void AssignPOI(MonsterController monsterC)

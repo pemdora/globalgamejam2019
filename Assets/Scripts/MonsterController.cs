@@ -10,11 +10,11 @@ public class MonsterController : MonoBehaviour
     public bool occupyplace;
     [HideInInspector]
     public bool actionchosen;
+    [HideInInspector]
     public GameObject target;
     [HideInInspector]
-    public float timeLeft;
-    public float canReactDelay;
-    private bool canReact;
+    public float timeLeft; // timeleft to finish action
+
     private Transform vision;
 
     [SerializeField]
@@ -23,14 +23,19 @@ public class MonsterController : MonoBehaviour
     private Sprite star;
 
     private Animator animator;
+    private bool playingImgAnimation;
+
+    [Header("[Animation Length for Happy/Angry]")]
     [SerializeField]
     private float angryAnimationLenght;
     [SerializeField]
     private float happyAnimationLenght;
 
+    [Header("[Delay]")]
+    public float canReactDelay; // delay before next reaction to object
+    private bool canReact;
 
-    private bool playingImgAnimation;
-
+    [Header("[Objects that got reaction with monster]")]
     public List<ObjectData> reactionObjects;
 
     private void Start()

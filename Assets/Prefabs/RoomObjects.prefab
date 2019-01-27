@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4999266748240628}
   - component: {fileID: 114745076427635396}
   m_Layer: 0
-  m_Name: Bathroom
+  m_Name: WC
   m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 4013100159995940}
   - component: {fileID: 114044160856569020}
   m_Layer: 0
-  m_Name: Carpet
+  m_Name: Sport
   m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1923151566789908}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.21, y: 0, z: -5.62}
+  m_LocalPosition: {x: 1.33, y: 1, z: -22.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4022207408176864}
@@ -144,7 +144,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1479216555232658}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.06, y: 0, z: 6.31}
+  m_LocalPosition: {x: 10.34, y: 1, z: 6.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4022207408176864}
@@ -157,7 +157,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1605896554408114}
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: -6.123234e-17, w: -2.8327693e-16}
-  m_LocalPosition: {x: 5.21, y: 0, z: -7.69}
+  m_LocalPosition: {x: 5.21, y: 1, z: -7.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4022207408176864}
@@ -170,7 +170,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1078847494515640}
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: -6.123234e-17, w: -2.8327693e-16}
-  m_LocalPosition: {x: 17.22, y: 0, z: -30.2}
+  m_LocalPosition: {x: 17.22, y: 1, z: -26.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4022207408176864}
@@ -183,7 +183,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1059152063797706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.36, y: 0, z: 0.83}
+  m_LocalPosition: {x: 19.648, y: 1, z: 0.872}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4022207408176864}
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d80bcc9f445bf33409efee838960a43b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 2
+  time: 6
   occupied: 0
 --- !u!114 &114180870780741802
 MonoBehaviour:
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d80bcc9f445bf33409efee838960a43b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 2
+  time: 3
   occupied: 0
 --- !u!114 &114653567364216026
 MonoBehaviour:
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d80bcc9f445bf33409efee838960a43b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 2
+  time: 10
   occupied: 0
 --- !u!114 &114675870749601754
 MonoBehaviour:
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d80bcc9f445bf33409efee838960a43b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 2
+  time: 6
   occupied: 0
 --- !u!114 &114745076427635396
 MonoBehaviour:

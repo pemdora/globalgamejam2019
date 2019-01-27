@@ -52,8 +52,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomObjects: {fileID: 0}
-  shopableObjects:
-  - {fileID: 1329693017182796, guid: 1909aacff0508c9438d1ea35edd12436, type: 2}
-  - {fileID: 1988100554732978, guid: ed8501d7eb357714ca435e500f8682bb, type: 2}
-  - {fileID: 1172571696453054, guid: f11e9958170e7a34c8b8b7c26d30a95b, type: 2}
   movableObjectsParent: {fileID: 0}
+  shopableObjects:
+  - {fileID: 1299058496161308, guid: 93ccb956eae17c54dbce85974fc4aab0, type: 2}
+  - {fileID: 1217889276318340, guid: bc116f96198a5c54a92b1bcdf9282c9c, type: 2}
+  - {fileID: 1666436331999496, guid: 4cdd5e32aac6f5441b25253168ccbac9, type: 2}

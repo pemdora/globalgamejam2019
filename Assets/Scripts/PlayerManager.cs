@@ -33,9 +33,7 @@ public class PlayerManager : MonoBehaviour
 
             //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
             Destroy(gameObject);
-
-        //Sets this to not be destroyed when reloading scene
-        DontDestroyOnLoad(gameObject);
+        
 
         score = 2.6f;
         scoreMax = 5.0f;
