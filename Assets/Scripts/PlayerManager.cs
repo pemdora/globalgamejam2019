@@ -40,6 +40,11 @@ public class PlayerManager : MonoBehaviour
     public int maxDay;
     private int dayCounter;
 
+    private Color daySky;
+    private Color nightSky;
+    private Color dayLight;
+    private Color nightLight;
+
     void Awake()
     {
         //Check if instance already exists
@@ -65,7 +70,13 @@ public class PlayerManager : MonoBehaviour
         UpdateScore(0.0f);
 
         UpdateMoney(0);
-    }
+
+        // init colors
+        daySky = new Color(74, 129, 161, 0) / 255;
+        nightSky = new Color(35, 56, 67, 0) / 255;
+        dayLight = new Color(255, 255, 255, 1) / 255;
+        nightLight = new Color(250, 148, 48, 1) / 255;
+}
 
     void Start()
     {
@@ -92,6 +103,25 @@ public class PlayerManager : MonoBehaviour
         {
             timeLeft -= Time.deltaTime;
             _slider.value = dayLength - timeLeft;
+
+            // handle the sun light direction
+            float ratio = _slider.value / dayLength;
+
+            float rSky = daySky.r + (nightSky.r - daySky.r) * ratio;
+            float gSky = daySky.g + (nightSky.g - daySky.g) * ratio;
+            float bSky = daySky.b + (nightSky.b - daySky.b) * ratio;
+            Color skyColor = new Color(rSky, gSky, bSky);
+
+            float rLight = dayLight.r + (nightLight.r - dayLight.r) * ratio;
+            float gLight = dayLight.g + (nightLight.g - dayLight.g) * ratio;
+            float bLight = dayLight.b + (nightLight.b - dayLight.b) * ratio;
+            Color lightColor = new Color(rLight, gLight, bLight);
+
+            Camera.main.backgroundColor = skyColor;
+            Light dirLight = GameObject.Find("Directional Light").GetComponent<Light>();
+            dirLight.color = lightColor;
+
+
             if (timeLeft <= 0 && !finishedDay)
             {
                 dayCounter++;
