@@ -2564,7 +2564,6 @@ MonoBehaviour:
   tutoSprites:
   - {fileID: 21300000, guid: f4060f489b8df764db397257df316e15, type: 3}
   - {fileID: 21300000, guid: 989e42fa1e351b14a856cb8052038ce6, type: 3}
-  - {fileID: 21300000, guid: 2cbed16c8d328ea4a9af4e38f21ebdb4, type: 3}
   - {fileID: 21300000, guid: 67b47d9311973184e97b5160d77ab808, type: 3}
   objToActive: {fileID: 1380516879327746}
   img: {fileID: 114581380670982714}
