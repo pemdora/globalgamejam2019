@@ -10,7 +10,6 @@ public class MonsterController : MonoBehaviour
     public bool occupyplace;
     [HideInInspector]
     public bool actionchosen;
-    [HideInInspector]
     public GameObject target;
     [HideInInspector]
     public float timeLeft;
@@ -79,18 +78,16 @@ public class MonsterController : MonoBehaviour
         
         
         // moving if target is not reached => move
-        if (target != null && Vector2.Distance(new Vector2(vision.position.x,vision.position.z), new Vector2(target.transform.position.x, target.transform.position.z)) > 2f)
+        if (target != null && Vector2.Distance(new Vector2(vision.position.x,vision.position.z), new Vector2(target.transform.position.x, target.transform.position.z)) > 1.5f)
         {
             if(!animator.GetBool("angry") && !animator.GetBool("happy"))
             {
-                Debug.Log("go");
                 GetComponent<NavMeshAgent>().isStopped = false;
                 animator.SetBool("walking", true);
                 MoveTo(target); // need to be called once to be cleaner
             }
             else
             {
-                Debug.Log("stop");
                 Stop();
             }
         }

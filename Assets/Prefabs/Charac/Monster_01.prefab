@@ -703,8 +703,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1656426999238732}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.02, y: 0.95, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -11.940567, y: 1.4860928, z: -10.009247}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4849640069628168}
@@ -1238,10 +1238,10 @@ MonoBehaviour:
   angryAnimationLenght: 2
   happyAnimationLenght: 2
   reactionObjects:
-  - obj: {fileID: 1172571696453054, guid: f11e9958170e7a34c8b8b7c26d30a95b, type: 2}
+  - obj: {fileID: 1299058496161308, guid: 93ccb956eae17c54dbce85974fc4aab0, type: 2}
     reaction: 0
     emote: {fileID: 21300000, guid: fbd9a822e54bc67488dfe27e74eeba00, type: 3}
-  - obj: {fileID: 1329693017182796, guid: 1909aacff0508c9438d1ea35edd12436, type: 2}
+  - obj: {fileID: 1666436331999496, guid: 4cdd5e32aac6f5441b25253168ccbac9, type: 2}
     reaction: 3
     emote: {fileID: 21300000, guid: e0f1eda761bf3db45880aa444442160e, type: 3}
 --- !u!114 &114539269726809696
