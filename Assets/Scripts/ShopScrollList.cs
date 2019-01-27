@@ -8,6 +8,7 @@ public class Item
 {
     public string name;
     public Sprite icon;
+    public Sprite type;
     public int price = 0;
 }
 
