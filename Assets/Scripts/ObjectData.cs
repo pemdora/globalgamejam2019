@@ -9,4 +9,5 @@ public class ObjectData
     public enum REACTION { Love, Like, Dislike, Hate};
     public REACTION reaction;
     public Sprite emote;
+    public float satisfactionScore;
 }

@@ -30,6 +30,8 @@ public class MonsterController : MonoBehaviour
     private float angryAnimationLenght;
     [SerializeField]
     private float happyAnimationLenght;
+    [Header("[Waiting score penalty]")]
+    public float waitingPenalty; // penalty when monster cannot do action
 
     [Header("[Delay]")]
     public float canReactDelay; // delay before next reaction to object
@@ -106,7 +108,7 @@ public class MonsterController : MonoBehaviour
                 {
                     actionchosen = true;
 
-                    PlayerManager.instance.UpdateScore(-0.5f);
+                    PlayerManager.instance.UpdateScore(waitingPenalty);
                     animator.SetBool("angry", true);
                     emoteImg.sprite = reactionObjects.Find(x => x.reaction == ObjectData.REACTION.Hate).emote;
                     StartEmoteAnim();
@@ -183,7 +185,7 @@ public class MonsterController : MonoBehaviour
                             animator.SetBool("happy", true);
                             StartCoroutine(ChangeAnimationAndAssignTarget("happy", false, angryAnimationLenght));
 
-                            PlayerManager.instance.UpdateScore(0.1f);
+                            PlayerManager.instance.UpdateScore(objData.satisfactionScore);
                             PlayerManager.instance.EarnMoney(10, this.transform.position);
                             break;
                         case ObjectData.REACTION.Hate:
@@ -195,7 +197,7 @@ public class MonsterController : MonoBehaviour
                             StartEmoteAnim();
                             //StartCoroutine(FadeINandOutImage(0.7f, false, emoteImg, 0.5f));
                             // Score
-                            PlayerManager.instance.UpdateScore(-0.5f);
+                            PlayerManager.instance.UpdateScore(objData.satisfactionScore);
                             break;
                     }
                 }

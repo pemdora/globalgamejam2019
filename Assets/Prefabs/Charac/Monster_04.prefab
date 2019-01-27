@@ -944,7 +944,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1345054772359190}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 5.44, y: 0, z: 4.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4665954381765178}
@@ -1604,18 +1604,21 @@ MonoBehaviour:
   actionchosen: 0
   target: {fileID: 0}
   timeLeft: 0
-  canReactDelay: 2
   emoteImg: {fileID: 114068756352267340}
   star: {fileID: 21300000, guid: f15f725add1e22d4ea6359910cf4c75b, type: 3}
   angryAnimationLenght: 2
   happyAnimationLenght: 2
+  waitingPenalty: -0.5
+  canReactDelay: 2
   reactionObjects:
   - obj: {fileID: 1217889276318340, guid: bc116f96198a5c54a92b1bcdf9282c9c, type: 2}
     reaction: 0
     emote: {fileID: 21300000, guid: fbd9a822e54bc67488dfe27e74eeba00, type: 3}
+    satisfactionScore: 0.1
   - obj: {fileID: 1299058496161308, guid: 93ccb956eae17c54dbce85974fc4aab0, type: 2}
     reaction: 3
     emote: {fileID: 21300000, guid: e0f1eda761bf3db45880aa444442160e, type: 3}
+    satisfactionScore: -0.5
 --- !u!136 &136840607844824582
 CapsuleCollider:
   m_ObjectHideFlags: 1
