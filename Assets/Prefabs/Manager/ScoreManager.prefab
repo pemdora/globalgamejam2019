@@ -59,7 +59,7 @@ MonoBehaviour:
   _slider: {fileID: 0}
   panel_End_Of_TheDAy: {fileID: 0}
   panel_GameOver: {fileID: 0}
-  dayLength: 60
+  dayLength: 70
   scoreStart: 2.5
-  moneyStart: 100
-  maxDay: 2
+  moneyStart: 150
+  maxDay: 10

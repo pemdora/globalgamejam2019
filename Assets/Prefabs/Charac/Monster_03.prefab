@@ -1564,7 +1564,7 @@ MonoBehaviour:
   - obj: {fileID: 1217889276318340, guid: bc116f96198a5c54a92b1bcdf9282c9c, type: 2}
     reaction: 3
     emote: {fileID: 21300000, guid: 1eb72d89016b5d446bb333845cf766b7, type: 3}
-    satisfactionScore: -0.5
+    satisfactionScore: -0.3
 --- !u!114 &114161845207465804
 MonoBehaviour:
   m_ObjectHideFlags: 1
