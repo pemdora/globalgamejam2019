@@ -89,7 +89,6 @@ public class PlayerManager : MonoBehaviour
 
     private IEnumerator MoveCoinToUIPoint(Image coinIcon)
     {
-        Debug.Log("MoveCoinToUIPoint");
         while (Vector3.Distance(coinIcon.rectTransform.position, moneyUI.rectTransform.position) > 1.5f)
         {
             //coinIcon.rectTransform.position = Vector3.Lerp(coinIcon.rectTransform.position, moneyUI.rectTransform.position, 2 * Time.deltaTime);

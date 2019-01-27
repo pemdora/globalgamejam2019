@@ -53,6 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomObjects: {fileID: 0}
   movableObjectsParent: {fileID: 0}
+  canvasCountDownObject: {fileID: 1238501534619704, guid: 617e66a4ebfec5a40a6d31401e02f7b3,
+    type: 2}
   shopableObjects:
   - {fileID: 1299058496161308, guid: 93ccb956eae17c54dbce85974fc4aab0, type: 2}
   - {fileID: 1217889276318340, guid: bc116f96198a5c54a92b1bcdf9282c9c, type: 2}

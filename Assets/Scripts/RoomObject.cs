@@ -11,5 +11,4 @@ public class RoomObject : MonoBehaviour {
     {
         occupied = false;
     }
-
 }

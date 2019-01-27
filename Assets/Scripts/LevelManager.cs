@@ -11,6 +11,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private Transform movableObjectsParent;
     private List<Transform> spawnPoints;
+    [SerializeField]
+    private GameObject canvasCountDownObject;
 
     [Header("[List of shopable Objects]")]
     [SerializeField]
@@ -73,7 +75,15 @@ public class LevelManager : MonoBehaviour
         {
             if (obj.name.Equals(objectName))
             {
+                // Instanciate object
                 GameObject newobj = Instantiate(obj, movableObjectsParent);
+                // Instanciate UI
+                GameObject canvas = Instantiate(canvasCountDownObject, newobj.transform);
+                canvas.transform.localScale = Vector3.one;
+                canvas.transform.position = new Vector3(0, 2.5f, 0);
+
+                newobj.GetComponent<MovableObject>().SetCanvas(canvas);
+
                 int index = Random.Range(0, spawnPoints.Count);
                 Transform pos = spawnPoints[index];
                 newobj.transform.position = pos.position;

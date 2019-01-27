@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17365289, g: 0.21710074, b: 0.29922125, a: 1}
+  m_IndirectSpecularColor: {r: 0.17365238, g: 0.21710008, b: 0.2992206, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -558,6 +558,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 1081938419548902, guid: f5cd42eafe4769a4ca49ed03e997b6ef, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5cd42eafe4769a4ca49ed03e997b6ef, type: 2}
   m_IsPrefabAsset: 0
@@ -1026,6 +1030,11 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 53d0e098f0d236f4f9d81f960b1a5258,
         type: 3}
+    - target: {fileID: 224554089541690002, guid: 6e8efd23ba5eaa54ebe6290becb261ab,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000074271986
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e8efd23ba5eaa54ebe6290becb261ab, type: 2}
   m_IsPrefabAsset: 0
@@ -1429,11 +1438,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114575037322949702, guid: ef8cad59911221b4184db33b979caf0f,
-        type: 2}
-      propertyPath: shopableObjects.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4565351432953098, guid: ef8cad59911221b4184db33b979caf0f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1478,21 +1482,9 @@ Prefab:
       objectReference: {fileID: 745869430}
     - target: {fileID: 114575037322949702, guid: ef8cad59911221b4184db33b979caf0f,
         type: 2}
-      propertyPath: shopableObjects.Array.data[0]
+      propertyPath: canvasCountDownObject
       value: 
-      objectReference: {fileID: 1299058496161308, guid: 93ccb956eae17c54dbce85974fc4aab0,
-        type: 2}
-    - target: {fileID: 114575037322949702, guid: ef8cad59911221b4184db33b979caf0f,
-        type: 2}
-      propertyPath: shopableObjects.Array.data[1]
-      value: 
-      objectReference: {fileID: 1217889276318340, guid: bc116f96198a5c54a92b1bcdf9282c9c,
-        type: 2}
-    - target: {fileID: 114575037322949702, guid: ef8cad59911221b4184db33b979caf0f,
-        type: 2}
-      propertyPath: shopableObjects.Array.data[2]
-      value: 
-      objectReference: {fileID: 1666436331999496, guid: 4cdd5e32aac6f5441b25253168ccbac9,
+      objectReference: {fileID: 1069354183124504, guid: 3cf139a652d6799449431e0b6241b834,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef8cad59911221b4184db33b979caf0f, type: 2}
