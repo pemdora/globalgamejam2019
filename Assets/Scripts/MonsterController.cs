@@ -186,7 +186,7 @@ public class MonsterController : MonoBehaviour
                             StartCoroutine(ChangeAnimationAndAssignTarget("happy", false, angryAnimationLenght));
 
                             PlayerManager.instance.UpdateScore(objData.satisfactionScore);
-                            PlayerManager.instance.EarnMoney(10, this.transform.position);
+                            PlayerManager.instance.EarnMoney(1, this.transform.position);
                             break;
                         case ObjectData.REACTION.Hate:
                             emoteImg.sprite = objData.emote;

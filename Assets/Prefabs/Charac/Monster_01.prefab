@@ -1237,7 +1237,7 @@ MonoBehaviour:
   angryAnimationLenght: 2
   happyAnimationLenght: 2
   waitingPenalty: -0.2
-  canReactDelay: 2
+  canReactDelay: 5
   reactionObjects:
   - obj: {fileID: 1299058496161308, guid: 93ccb956eae17c54dbce85974fc4aab0, type: 2}
     reaction: 0

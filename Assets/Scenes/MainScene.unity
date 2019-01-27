@@ -2421,6 +2421,14 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1617191119}
+    - target: {fileID: 1710122584447924, guid: 10e0f9d3d703ee943b4a6a4ef569fd7f, type: 2}
+      propertyPath: m_Name
+      value: Money Txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 1821201849387294, guid: 10e0f9d3d703ee943b4a6a4ef569fd7f, type: 2}
+      propertyPath: m_Name
+      value: Money
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10e0f9d3d703ee943b4a6a4ef569fd7f, type: 2}
   m_IsPrefabAsset: 0
@@ -3782,7 +3790,7 @@ Prefab:
     - target: {fileID: 224554089541690002, guid: 6e8efd23ba5eaa54ebe6290becb261ab,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000024943576
+      value: -0.0000025235195
       objectReference: {fileID: 0}
     - target: {fileID: 224188109699636738, guid: 6e8efd23ba5eaa54ebe6290becb261ab,
         type: 2}
@@ -5032,11 +5040,6 @@ Prefab:
       propertyPath: panel_GameOver
       value: 
       objectReference: {fileID: 1965977538}
-    - target: {fileID: 114447502321563114, guid: a89f6636d92ca384c8b9d5e1a03f3a59,
-        type: 2}
-      propertyPath: scoreStart
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a89f6636d92ca384c8b9d5e1a03f3a59, type: 2}
   m_IsPrefabAsset: 0

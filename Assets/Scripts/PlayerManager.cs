@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -92,6 +93,10 @@ public class PlayerManager : MonoBehaviour
             {
                 finishedDay = true;
                 StartAnimEndDay();
+                panel_End_Of_TheDAy.transform.Find("Score").GetComponent<TextMeshProUGUI>().text = this.score.ToString();
+                int moneyEarned = (int)Mathf.Floor(this.score) * 10;
+                panel_End_Of_TheDAy.transform.Find("Money").GetComponent<TextMeshProUGUI>().text = this.money + "+ (" + moneyEarned.ToString() +")";
+                this.money+=moneyEarned;
             }
         }
     }
@@ -180,7 +185,6 @@ public class PlayerManager : MonoBehaviour
 
     public void StartAnimGameOver()
     {
-
         panel_GameOver.SetActive(true);
         CancelInvoke("FinishAnimGameOver");
         gameOverAnim["GameOver"].speed = 1f;
