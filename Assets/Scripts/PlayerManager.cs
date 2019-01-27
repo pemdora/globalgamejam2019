@@ -18,17 +18,24 @@ public class PlayerManager : MonoBehaviour
     private float scoreMax;
 
     private int money;
+    private bool gameOver;
 
     [SerializeField]
     private Slider _slider;
     private float timeLeft;
     private bool finishedDay;
-    [Header("Day param")]
-    public float dayLength;
 
     private Animation theAnimEndOfTheDay;
     [SerializeField]
     private GameObject panel_End_Of_TheDAy;
+    private Animation gameOverAnim;
+    [SerializeField]
+    private GameObject panel_GameOver;
+
+    [Header("Game param")]
+    public float dayLength;
+    public float scoreStart;
+    public int moneyStart;
 
     void Awake()
     {
@@ -38,6 +45,7 @@ public class PlayerManager : MonoBehaviour
             //if not, set instance to this
             instance = this;
             theAnimEndOfTheDay = panel_End_Of_TheDAy.GetComponent<Animation>();
+            gameOverAnim = panel_GameOver.GetComponent<Animation>();
         }
         //If instance already exists and it's not this:
         else if (instance != this)
@@ -46,11 +54,12 @@ public class PlayerManager : MonoBehaviour
             Destroy(gameObject);
 
 
-        score = 2.5f;
+        score = scoreStart;
+        money = moneyStart;
+
         scoreMax = 5.0f;
         UpdateScore(0.0f);
 
-        money = 100;
         UpdateMoney(0);
     }
 
@@ -58,6 +67,7 @@ public class PlayerManager : MonoBehaviour
     {
         ResetSlider();
         finishedDay = false;
+        gameOver = false;
     }
 
     public void ResetSlider()
@@ -69,12 +79,20 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
-        timeLeft -= Time.deltaTime;
-        _slider.value = dayLength - timeLeft;
-        if (timeLeft < 0 && !finishedDay)
+        if (!gameOver && score <= 0)
         {
-            finishedDay = true;
-            StartAnim();
+            gameOver = true;
+            StartAnimGameOver();
+        }
+        else
+        {
+            timeLeft -= Time.deltaTime;
+            _slider.value = dayLength - timeLeft;
+            if (timeLeft < 0 && !finishedDay)
+            {
+                finishedDay = true;
+                StartAnimEndDay();
+            }
         }
     }
 
@@ -135,16 +153,57 @@ public class PlayerManager : MonoBehaviour
     }
 
 
-    public void StartAnim()
+    public void StartAnimEndDay()
     {
 
         panel_End_Of_TheDAy.SetActive(true);
-        CancelInvoke("FinishAnim");
+        CancelInvoke("FinishAnimEndDay");
         theAnimEndOfTheDay["EndOfTheDay"].speed = 1f;
 
         theAnimEndOfTheDay.Play("EndOfTheDay");
         Invoke("PauseGame", theAnimEndOfTheDay["EndOfTheDay"].length);
         //Invoke("FinishAnim", theAnimEndOfTheDay["EndOfTheDay"].length);
+    }
+
+    public void FinishAnimEndDay()
+    {
+        //MenuManager.instance.PauseGame();
+        CancelInvoke("FinishAnimEndDay");
+        theAnimEndOfTheDay["EndOfTheDay"].time = theAnimEndOfTheDay["EndOfTheDay"].length;
+        theAnimEndOfTheDay["EndOfTheDay"].speed = -1f;
+
+        theAnimEndOfTheDay.Play("EndOfTheDay");
+        Invoke("SwitchOff", (theAnimEndOfTheDay["EndOfTheDay"].length + 0.5f));
+    }
+
+
+
+    public void StartAnimGameOver()
+    {
+
+        panel_GameOver.SetActive(true);
+        CancelInvoke("FinishAnimGameOver");
+        gameOverAnim["GameOver"].speed = 1f;
+
+        gameOverAnim.Play("GameOver");
+        Invoke("PauseGame", gameOverAnim["GameOver"].length);
+        //Invoke("FinishAnim", theAnimEndOfTheDay["EndOfTheDay"].length);
+    }
+
+    public void FinishAnimGameOver()
+    {
+        //MenuManager.instance.PauseGame();
+        CancelInvoke("FinishAnimGameOver");
+        gameOverAnim["GameOver"].time = gameOverAnim["GameOver"].length;
+        gameOverAnim["GameOver"].speed = -1f;
+
+        gameOverAnim.Play("GameOver");
+        //Invoke("SwitchOff", (theAnimEndOfTheDay["EndOfTheDay"].length + 0.5f));
+    }
+
+    public void ReloadScene(string scene)
+    {
+        MenuManager.instance.LoadScene(scene);
     }
 
     public void PauseGame()
@@ -156,17 +215,6 @@ public class PlayerManager : MonoBehaviour
     {
         MenuManager.instance.UnpauseGame();
         MenuManager.instance.LoadMainMenu();
-    }
-
-    public void FinishAnim()
-    {
-        //MenuManager.instance.PauseGame();
-        CancelInvoke("FinishAnim");
-        theAnimEndOfTheDay["EndOfTheDay"].time = theAnimEndOfTheDay["EndOfTheDay"].length;
-        theAnimEndOfTheDay["EndOfTheDay"].speed = -1f;
-
-        theAnimEndOfTheDay.Play("EndOfTheDay");
-        Invoke("SwitchOff", (theAnimEndOfTheDay["EndOfTheDay"].length + 0.5f));
     }
 
     private void SwitchOff()
