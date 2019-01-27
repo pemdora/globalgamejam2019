@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Floor
+  m_Name: Pinao
   m_Shader: {fileID: 4800000, guid: a9ee7be602ba5d34a9e77ab153e3af2e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -43,7 +43,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 4847fcd97505d7c47b0333c58b6b0e87, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5ee4c1857bc3b7147909b2b5980d1897, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -69,14 +69,14 @@ Material:
     - _Displacement: 0
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 1000
+    - _Glossiness: -300
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RimAmount: 1
-    - _RimThreshold: 0
+    - _RimAmount: 0.716
+    - _RimThreshold: 0.1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
