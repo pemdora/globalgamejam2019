@@ -205,6 +205,7 @@ public class MonsterController : MonoBehaviour
                             break;
                         case ObjectData.REACTION.Hate:
                             emoteImg.sprite = objData.emote;
+                            // this.GetComponent<SFXSound>().PlayTheSound();
 
                             animator.SetBool("angry", true);
                             StartCoroutine(ChangeAnimationAndAssignTarget("angry", false, angryAnimationLenght));

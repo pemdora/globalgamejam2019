@@ -8,8 +8,10 @@ public class SFXSound : MonoBehaviour {
 
 	}
 
-	public void PlayTheSound(){
-		GetComponent<AudioSource>().clip = theSound;
-		GetComponent<AudioSource>().Play();
+	public void PlayTheSound()
+    {
+        GetComponent<AudioSource>().clip = theSound;
+        GetComponent<AudioSource>().pitch = 1.4f;
+        GetComponent<AudioSource>().Play();
 	}
 }
