@@ -35,7 +35,9 @@ public class MonsterController : MonoBehaviour
     [SerializeField]
     private Sprite portrait;
     [SerializeField]
-    private string description;
+    private string descriptionLove;
+    [SerializeField]
+    private string descriptionHate;
 
     [Header("[Animation Length for Happy/Angry]")]
     [SerializeField]
@@ -320,8 +322,9 @@ public class MonsterController : MonoBehaviour
     {
         panel_Character.transform.Find("Name").GetComponent<Text>().text = namemonster;
         panel_Character.transform.Find("Portrait").GetComponent<Image>().sprite = portrait;
-        panel_Character.transform.Find("Description").GetComponent<Text>().text = description;
-        if(target!=null)
+        panel_Character.transform.Find("Love").GetComponent<Text>().text = descriptionLove;
+        panel_Character.transform.Find("Hate").GetComponent<Text>().text = descriptionHate;
+        if (target!=null)
             panel_Character.transform.Find("Target").GetComponent<Image>().sprite = target.GetComponent<RoomObject>().spr;
         panel_Character.SetActive(true);
     }
