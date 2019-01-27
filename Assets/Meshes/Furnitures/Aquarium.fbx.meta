@@ -1,21 +1,33 @@
 fileFormatVersion: 2
-guid: a4e233dffd79253469792433d4b089ab
+guid: 4a646a3cfcebd6d4f93d8839d4351c8f
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Couch_2
-    100004: Cushion
+    100002: Aquarium_2
+    100004: Fish
+    100006: FOND
+    100008: Surface_de_Subdivision
     400000: //RootNode
-    400002: Couch_2
-    400004: Cushion
+    400002: Aquarium_2
+    400004: Fish
+    400006: FOND
+    400008: Surface_de_Subdivision
     2100000: No Name
-    2300000: Couch_2
-    2300002: Cushion
-    3300000: Couch_2
-    3300002: Cushion
-    4300000: Couch_2
-    4300002: Cushion
+    2300000: //RootNode
+    2300002: Fish
+    2300004: FOND
+    2300006: Surface_de_Subdivision
+    3300000: //RootNode
+    3300002: Fish
+    3300004: FOND
+    3300006: Surface_de_Subdivision
+    4300000: Aquarium
+    4300002: Fish
+    4300004: FOND
+    4300006: Surface_de_Subdivision
+    7400000: Aquarium
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 0
@@ -43,7 +55,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Aquarium
+      takeName: Cinema_4D_Prise Principale
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -67,14 +107,14 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -92,7 +132,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
