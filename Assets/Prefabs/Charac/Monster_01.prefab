@@ -1336,7 +1336,7 @@ MonoBehaviour:
   panel_Character: {fileID: 0}
   _pitch: 1.2
   namemonster: Lulu
-  portrait: {fileID: 21300000, guid: 44efc24e47c464a4e90dd4d2cab118c3, type: 3}
+  portrait: {fileID: 21300000, guid: 49ed95f53fc531649a7c502e313bb8a7, type: 3}
   descriptionLove: hobbies
   descriptionHate: comfort
   angryAnimationLenght: 2

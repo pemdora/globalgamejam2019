@@ -1747,7 +1747,7 @@ MonoBehaviour:
   panel_Character: {fileID: 0}
   _pitch: 1.5
   namemonster: Archibald
-  portrait: {fileID: 21300000, guid: eea54169dd0a7bf4ba5a066060e12680, type: 3}
+  portrait: {fileID: 21300000, guid: 848636b5ba48a0443a8f4c96a73f57e2, type: 3}
   descriptionLove: decoration
   descriptionHate: hobbies
   angryAnimationLenght: 3

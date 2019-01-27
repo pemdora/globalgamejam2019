@@ -1549,7 +1549,7 @@ MonoBehaviour:
   panel_Character: {fileID: 0}
   _pitch: 0.9
   namemonster: "L\xE9ontine"
-  portrait: {fileID: 21300000, guid: 794ee42aee40f124caf2990adeead0f7, type: 3}
+  portrait: {fileID: 21300000, guid: bb98f6e2b30ddc34989c251aa55ce3b9, type: 3}
   descriptionLove: comfort
   descriptionHate: decoration
   angryAnimationLenght: 4
